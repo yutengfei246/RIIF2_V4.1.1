@@ -201,10 +201,6 @@ associativeInstanceDeclaratorId
     : Identifier '[' Identifier ']'
     ;
 
-associativeInstanceAttributeId
-    : associativeInstanceDeclaratorId ( '\'' Identifier )
-    ;
-
 variableId
     : variableDeclaratorId
     | associativeInstanceDeclaratorId
