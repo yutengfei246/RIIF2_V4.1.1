@@ -33,3 +33,5 @@ component IMPROVED_SRAM_MEMORY;
   assign CHIP_FAIL'unit = MTTF;
 
 endcomponent
+
+

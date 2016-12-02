@@ -1,14 +1,19 @@
+// §RIIF-2 language
+
 grammar RIIF2;
 //TODO: some of the attribute tokens are necessary some of them are not
 //TODO: Build Object with HashTable (VariableTable)
 //TODO: predicate ?
 
-/*Programmar File RIIF-2 */
+//TODO: attribute name that reserved are not presented as keywords because they are only as keywords as attribute name
+
+
 program
     : typeDeclaration+ EOF
     ;
 
-/*Declarations in RIIF-2 */
+// §RIIF-2 declaration types
+
 typeDeclaration
     : componentDeclaration
     | templateDeclaration      //RIIF-2: template
@@ -19,9 +24,9 @@ typeDeclaration
 // §RIIF-2-v4 Component
 
 componentDeclaration
-    : COMPONENT comId=Identifier
-      (EXTENDS comEx=Identifier (',' comEx1+=Identifier)*)?
-      (IMPLEMENTS comImpl=Identifier (',' comImpl1+=Identifier)*)?  ';'
+    : COMPONENT Identifier
+      (EXTENDS extendsList)?
+      (IMPLEMENTS implementsList)?  ';'
       componentBodyElement*
       END_COMPONENT
     ;
@@ -118,8 +123,6 @@ requirementDeclaration
       assertion*
       END_REQUIREMENT
     ;
-
-
 
 // §RIIF-2-v4 Declarators
 
@@ -262,6 +265,18 @@ childcomponentDeclaratorType
 
 vector
     : '[' expression ':' expression ']'
+    ;
+
+identifierList
+    : Identifier ( ',' Identifier )*
+    ;
+
+extendsList
+    : identifierList
+    ;
+
+implementsList
+    : identifierList
     ;
 
 /*RIIF-2: ANTlr.4 expression (Same with JAVA)*/
