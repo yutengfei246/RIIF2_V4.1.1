@@ -6,9 +6,10 @@ import java.util.Map;
 /**
  * Created by yutengfei on 01/12/16.
  */
-public class Paremeter<T> extends Label<T>{
+public class Parameter<T> extends Label<T>{
 
     private T value;
+    private boolean compeleted;
 
     // reserved keywords for attributes of parameters
     private Map<String,Object> parameterAttribute = new HashMap<String,Object>(){{
@@ -17,7 +18,9 @@ public class Paremeter<T> extends Label<T>{
                 put("rate",null);
             }};
 
-    public Paremeter(T value,String name, Boolean isAssociative, Boolean isAbstract) {
+    public Parameter(){this(null,null,null,null);}
+
+    public Parameter(T value, String name, Boolean isAssociative, Boolean isAbstract) {
         super(name, isAssociative, isAbstract);
         this.value = value ;
     }
@@ -32,5 +35,9 @@ public class Paremeter<T> extends Label<T>{
     public Boolean setValue(T value) {
         this.value = value ;
         return true;
+    }
+
+    public boolean isCompeleted() {
+        return this.compeleted;
     }
 }

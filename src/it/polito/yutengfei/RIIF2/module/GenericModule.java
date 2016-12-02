@@ -28,8 +28,8 @@ public abstract class GenericModule{
         return implementedName;
     }
 
-    public void setImplementedName(List<String> implemenedName) {
-        this.implementedName = implemenedName;
+    public void setImplementedName(List<String> implementedName) {
+        this.implementedName = implementedName;
     }
 
     public List<String> getExtendedName() {
@@ -40,8 +40,17 @@ public abstract class GenericModule{
         this.extendedName = extendedName;
     }
 
-    public abstract GenericModule generateModule();
+    public Boolean addExtendedName(String name){
+        if(this.extendedName.add(name))
+            return true;
+        return false;
+    }
 
-    public abstract Boolean generateModeuleObject();
+    public Boolean addImplementedName(String name){
+        if(this.implementedName.add(name))
+            return true;
+        return false;
+    }
+
 
 }

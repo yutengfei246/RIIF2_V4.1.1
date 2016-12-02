@@ -32,5 +32,7 @@ public interface  _Provider{
 
     public abstract GenericRequirement generateRequirement();
 
+    public abstract Boolean generateModeuleObject();
+
 
 }

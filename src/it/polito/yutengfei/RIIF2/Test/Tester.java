@@ -2,6 +2,7 @@ package it.polito.yutengfei.RIIF2.Test;
 
 import it.polito.yutengfei.RIIF2.RIIF2Lexer;
 import it.polito.yutengfei.RIIF2.RIIF2Parser;
+import it.polito.yutengfei.RIIF2.visitor.SecondLevelVisitor;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -50,8 +51,13 @@ public class Tester {
 
             ParseTree parseTree = parser.program();
 
-            ParseTreeWalker walker = new ParseTreeWalker();
-            walker.walk(null, parseTree);
+      //      ParseTreeWalker walker = new ParseTreeWalker();
+    //        walker.walk(null, parseTree);
+
+            SecondLevelVisitor secondLevelVisitor =
+                    new SecondLevelVisitor(parseTree,parser);
+
+            secondLevelVisitor.visit(parseTree);
 
             System.out.println(parseTree.toStringTree());
 

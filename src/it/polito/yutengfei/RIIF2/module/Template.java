@@ -19,13 +19,4 @@ public class Template extends GenericModule{
         super(name);
     }
 
-    @Override
-    public GenericModule generateModule() {
-        return null;
-    }
-
-    @Override
-    public Boolean generateModeuleObject() {
-        return null;
-    }
 }

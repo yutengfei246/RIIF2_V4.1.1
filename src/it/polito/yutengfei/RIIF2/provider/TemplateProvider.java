@@ -1,16 +1,15 @@
-package it.polito.yutengfei.RIIF2.parser;
+package it.polito.yutengfei.RIIF2.provider;
 
 import it.polito.yutengfei.RIIF2.module.GenericModule;
-import it.polito.yutengfei.RIIF2.provider._Provider;
+import it.polito.yutengfei.RIIF2.parser.TemplateListener;
 import it.polito.yutengfei.RIIF2.requirement.GenericRequirement;
 
 import java.util.Map;
 
 /**
- * Created by yutengfei on 01/12/16.
+ * Created by yutengfei on 02/12/16.
  */
-public class Provider extends Syntaxer implements _Provider {
-
+public class TemplateProvider extends TemplateListener implements _Provider {
 
     @Override
     public Map<GenericModule, GenericRequirement> provide() {
@@ -32,4 +31,8 @@ public class Provider extends Syntaxer implements _Provider {
         return null;
     }
 
+    @Override
+    public Boolean generateModeuleObject() {
+        return null;
+    }
 }

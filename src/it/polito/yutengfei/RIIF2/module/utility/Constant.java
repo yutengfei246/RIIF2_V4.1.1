@@ -8,8 +8,8 @@ import java.util.Map;
  */
 public class Constant<T> extends Label<T>{
 
-    private final T constValue; // not allowed to change
-    
+    private T constValue; // not allowed to change
+
     private Map<String,Object> constantAttribute  = new HashMap<String,Object>(){{
                  put("units",null);
             }};
@@ -17,6 +17,10 @@ public class Constant<T> extends Label<T>{
     public Constant(T value, String name, Boolean isAssociative, Boolean isAbstract) {
         super(name, isAssociative, isAbstract);
         this.constValue = value;
+    }
+
+    public Constant() {
+        this(null,null,null,null);
     }
 
     @Override
