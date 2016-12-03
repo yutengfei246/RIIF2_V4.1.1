@@ -48,7 +48,7 @@ public class RIIF2Parser extends Parser {
 		RULE_variableId = 38, RULE_assignmentDeclaratorId = 39, RULE_assignmentVariableId = 40, 
 		RULE_assignmentVariableAttributeId = 41, RULE_assignmentTableItemId = 42, 
 		RULE_imposeDeclaratorId = 43, RULE_primitiveType = 44, RULE_typeType = 45, 
-		RULE_enumType = 46, RULE_item = 47, RULE_childcomponentDeclaratorType = 48, 
+		RULE_enumType = 46, RULE_item = 47, RULE_childComponentDeclaratorType = 48, 
 		RULE_vector = 49, RULE_identifierList = 50, RULE_extendsList = 51, RULE_implementsList = 52, 
 		RULE_expression = 53, RULE_primary = 54, RULE_literal = 55, RULE_funcCall = 56, 
 		RULE_funcName = 57, RULE_funcArg = 58;
@@ -66,7 +66,7 @@ public class RIIF2Parser extends Parser {
 		"variableDeclaratorId", "associativeDeclaratorId", "associativeInstanceDeclaratorId", 
 		"variableId", "assignmentDeclaratorId", "assignmentVariableId", "assignmentVariableAttributeId", 
 		"assignmentTableItemId", "imposeDeclaratorId", "primitiveType", "typeType", 
-		"enumType", "item", "childcomponentDeclaratorType", "vector", "identifierList", 
+		"enumType", "item", "childComponentDeclaratorType", "vector", "identifierList", 
 		"extendsList", "implementsList", "expression", "primary", "literal", "funcCall", 
 		"funcName", "funcArg"
 	};
@@ -1715,8 +1715,8 @@ public class RIIF2Parser extends Parser {
 	}
 
 	public static class ChildComponentDeclaratorContext extends ParserRuleContext {
-		public ChildcomponentDeclaratorTypeContext childcomponentDeclaratorType() {
-			return getRuleContext(ChildcomponentDeclaratorTypeContext.class,0);
+		public ChildComponentDeclaratorTypeContext childComponentDeclaratorType() {
+			return getRuleContext(ChildComponentDeclaratorTypeContext.class,0);
 		}
 		public ChildComponentDeclaratorIdContext childComponentDeclaratorId() {
 			return getRuleContext(ChildComponentDeclaratorIdContext.class,0);
@@ -1751,7 +1751,7 @@ public class RIIF2Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(282);
-			childcomponentDeclaratorType();
+			childComponentDeclaratorType();
 			setState(283);
 			childComponentDeclaratorId();
 			setState(285);
@@ -3081,30 +3081,30 @@ public class RIIF2Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class ChildcomponentDeclaratorTypeContext extends ParserRuleContext {
+	public static class ChildComponentDeclaratorTypeContext extends ParserRuleContext {
 		public TerminalNode Identifier() { return getToken(RIIF2Parser.Identifier, 0); }
-		public ChildcomponentDeclaratorTypeContext(ParserRuleContext parent, int invokingState) {
+		public ChildComponentDeclaratorTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_childcomponentDeclaratorType; }
+		@Override public int getRuleIndex() { return RULE_childComponentDeclaratorType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterChildcomponentDeclaratorType(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterChildComponentDeclaratorType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitChildcomponentDeclaratorType(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitChildComponentDeclaratorType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitChildcomponentDeclaratorType(this);
+			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitChildComponentDeclaratorType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ChildcomponentDeclaratorTypeContext childcomponentDeclaratorType() throws RecognitionException {
-		ChildcomponentDeclaratorTypeContext _localctx = new ChildcomponentDeclaratorTypeContext(_ctx, getState());
-		enterRule(_localctx, 96, RULE_childcomponentDeclaratorType);
+	public final ChildComponentDeclaratorTypeContext childComponentDeclaratorType() throws RecognitionException {
+		ChildComponentDeclaratorTypeContext _localctx = new ChildComponentDeclaratorTypeContext(_ctx, getState());
+		enterRule(_localctx, 96, RULE_childComponentDeclaratorType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{

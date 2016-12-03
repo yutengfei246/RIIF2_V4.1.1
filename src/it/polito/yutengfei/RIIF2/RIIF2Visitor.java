@@ -299,11 +299,11 @@ public interface RIIF2Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitItem(RIIF2Parser.ItemContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link RIIF2Parser#childcomponentDeclaratorType}.
+	 * Visit a parse tree produced by {@link RIIF2Parser#childComponentDeclaratorType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitChildcomponentDeclaratorType(RIIF2Parser.ChildcomponentDeclaratorTypeContext ctx);
+	T visitChildComponentDeclaratorType(RIIF2Parser.ChildComponentDeclaratorTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RIIF2Parser#vector}.
 	 * @param ctx the parse tree

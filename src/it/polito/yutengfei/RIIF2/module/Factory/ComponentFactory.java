@@ -15,6 +15,8 @@ public class ComponentFactory implements Factory{
     public static final int CONSTANT = 20;
     public static final int TYPE_TABLE = 30;
     public static final int TYPE_ASSOCIATIVE = 40;
+    public static final int CHILD_COMPONENT = 50;
+    public static final int TYPE_ENUM = 60;
 
     @Override
     public GenericModule newInstance(String name) {
@@ -69,6 +71,51 @@ public class ComponentFactory implements Factory{
 
     public void setAssociativeVariableInstance(String associativeIdentifier, String associativeInstanceIdentifier)
         throws VaraibaleIdentifierAlreadyExistException{
+
+    }
+
+    public void prepareChildComponent() {
+
+    }
+
+    public void setChildComponentType(String identifier) {
+
+    }
+
+    public boolean hasPreparedVariable() {
+
+        return false;
+    }
+
+    public void assemblePreparedVariable() {
+
+    }
+
+    public boolean isPreparedVariableDone() {
+        return false;
+    }
+
+    public void cleanPrepared() {
+
+    }
+
+    public void setVariableType(String childComponentType) {
+
+    }
+
+    public void setVariableType(Class cls) {
+
+    }
+
+    public void setEnumTokens(String enumString) {
+
+    }
+
+    public void startSetEnumTokens() {
+
+    }
+
+    public void finishSetEnumTokens() {
 
     }
 }

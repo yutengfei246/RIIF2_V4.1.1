@@ -1,7 +1,6 @@
 // Generated from /home/tengfei/IdeaProjects/RIIF2_V4.1.1/RIIF2.g4 by ANTLR 4.5.3
 package it.polito.yutengfei.RIIF2;
 
-import it.polito.yutengfei.RIIF2.parser.VaraibaleIdentifierAlreadyExistException;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -269,7 +268,7 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException { }
+	@Override public void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -281,7 +280,7 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException { }
+	@Override public void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -293,7 +292,7 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException { }
+	@Override public void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -593,13 +592,13 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterChildcomponentDeclaratorType(RIIF2Parser.ChildcomponentDeclaratorTypeContext ctx) { }
+	@Override public void enterChildComponentDeclaratorType(RIIF2Parser.ChildComponentDeclaratorTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitChildcomponentDeclaratorType(RIIF2Parser.ChildcomponentDeclaratorTypeContext ctx) { }
+	@Override public void exitChildComponentDeclaratorType(RIIF2Parser.ChildComponentDeclaratorTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

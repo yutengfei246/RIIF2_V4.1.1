@@ -1,6 +1,5 @@
 // Generated from /home/tengfei/IdeaProjects/RIIF2_V4.1.1/RIIF2.g4 by ANTLR 4.5.3
 package it.polito.yutengfei.RIIF2;
-import it.polito.yutengfei.RIIF2.parser.VaraibaleIdentifierAlreadyExistException;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -222,7 +221,7 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException;
+	void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx);
 	/**
 	 * Exit a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
 	 * @param ctx the parse tree
@@ -232,7 +231,7 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link RIIF2Parser#associativeDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException;
+	void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx);
 	/**
 	 * Exit a parse tree produced by {@link RIIF2Parser#associativeDeclarator}.
 	 * @param ctx the parse tree
@@ -242,7 +241,7 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link RIIF2Parser#associativeInstanceDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException;
+	void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx);
 	/**
 	 * Exit a parse tree produced by {@link RIIF2Parser#associativeInstanceDeclarator}.
 	 * @param ctx the parse tree
@@ -489,15 +488,15 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 */
 	void exitItem(RIIF2Parser.ItemContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RIIF2Parser#childcomponentDeclaratorType}.
+	 * Enter a parse tree produced by {@link RIIF2Parser#childComponentDeclaratorType}.
 	 * @param ctx the parse tree
 	 */
-	void enterChildcomponentDeclaratorType(RIIF2Parser.ChildcomponentDeclaratorTypeContext ctx);
+	void enterChildComponentDeclaratorType(RIIF2Parser.ChildComponentDeclaratorTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RIIF2Parser#childcomponentDeclaratorType}.
+	 * Exit a parse tree produced by {@link RIIF2Parser#childComponentDeclaratorType}.
 	 * @param ctx the parse tree
 	 */
-	void exitChildcomponentDeclaratorType(RIIF2Parser.ChildcomponentDeclaratorTypeContext ctx);
+	void exitChildComponentDeclaratorType(RIIF2Parser.ChildComponentDeclaratorTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#vector}.
 	 * @param ctx the parse tree

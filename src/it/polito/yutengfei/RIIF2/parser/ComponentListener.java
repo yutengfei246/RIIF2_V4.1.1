@@ -73,7 +73,7 @@ public class ComponentListener extends RIIF2BaseListener {
         String identifier = variableDeclaratorIdContext.getText();
 
         try {
-            this.setVarialeIdentifier(identifier);
+            this.setVaribaleIdentifier(identifier);
         } catch (VaraibaleIdentifierAlreadyExistException e) {
             //TODO: specifying the specified tokens that we expected
             e.printStackTrace();
@@ -87,7 +87,27 @@ public class ComponentListener extends RIIF2BaseListener {
     @Override
     public void enterPrimitiveType(RIIF2Parser.PrimitiveTypeContext ctx) {
         Class cls = this.primitiveTypeSplitter(ctx);
-        this.component.setVariableType(cls);
+        if(cls != null)
+            this.componentFactoy.setVariableType(cls);
+        else{
+            this.componentFactoy.setVariableType(ComponentFactory.TYPE_ENUM);
+        }
+    }
+
+    @Override
+    public void enterEnumType(RIIF2Parser.EnumTypeContext ctx) {
+        List<TerminalNode> enumTokens = ctx.Identifier();
+
+        this.componentFactoy.startSetEnumTokens();
+        for(TerminalNode enumToken : enumTokens){
+            String enumString = enumToken.getText();
+            this.componentFactoy.setEnumTokens(enumString);
+        }
+    }
+
+    @Override
+    public void exitEnumType(RIIF2Parser.EnumTypeContext ctx) {
+        this.componentFactoy.finishSetEnumTokens();
     }
 
     @Override
@@ -112,7 +132,7 @@ public class ComponentListener extends RIIF2BaseListener {
         String identifier = Identifier.getText();
 
         try {
-            this.setVarialeIdentifier(identifier);
+            this.setVaribaleIdentifier(identifier);
         } catch (VaraibaleIdentifierAlreadyExistException e) {
             e.printStackTrace();
             //TODO: specifying the expected tokens
@@ -121,7 +141,7 @@ public class ComponentListener extends RIIF2BaseListener {
         this.componentFactoy.setVariableType(ComponentFactory.TYPE_ASSOCIATIVE);
     }
 
-    private void setVarialeIdentifier(String identifier) throws VaraibaleIdentifierAlreadyExistException {
+    private void setVaribaleIdentifier(String identifier) throws VaraibaleIdentifierAlreadyExistException {
         if(this.componentFactoy.containsVariable(identifier)){
             //TODO should throw Exception specifying expected tokens
             throw new VaraibaleIdentifierAlreadyExistException();
@@ -136,7 +156,7 @@ public class ComponentListener extends RIIF2BaseListener {
         String associativeInstanceIdentifier = Identifiers.get(1).getText();
 
         try {
-            this.setVarialeIdentifier(associativeIdentifier);
+            this.setVaribaleIdentifier(associativeIdentifier);
             this.componentFactoy.setAssociativeVariableInstance(associativeIdentifier,associativeInstanceIdentifier);
 
         } catch (VaraibaleIdentifierAlreadyExistException e) {
@@ -150,49 +170,54 @@ public class ComponentListener extends RIIF2BaseListener {
         }
     }
 
-
     @Override
     public void exitFieldDeclaration(RIIF2Parser.FieldDeclarationContext ctx) {
-        RIIF2Parser.TypeTypeContext typeTypeContext
-                = ctx.typeType();
-
-        // for secure case ... simply check the field in component
-        if(typeTypeContext.PARAMETER() != null){
-            if(this.component.isParameterCompleted())
-                this.component.addParameter();
+        if(this.componentFactoy.hasPreparedVariable() && this.componentFactoy.isPreparedVariableDone()) {
+            this.componentFactoy.assemblePreparedVariable();
+            this.componentFactoy.cleanPrepared();
         }
-
-        if(typeTypeContext.CONSTANT() != null){
-            if(this.component.isConstantCompleted())
-                this.component.addConstant();
-        }
-
-        return;
     }
 
-    private Class primitiveTypeSplitter(RIIF2Parser.PrimitiveTypeContext primitiveTypeContext) {
+    @Override
+    public void exitAssociativeInstanceDeclaratorInitializer(RIIF2Parser.AssociativeInstanceDeclaratorInitializerContext ctx) {
+        //TODO: here to read the associative value
+
     }
 
     @Override
     public void enterChildComponentDeclaration(RIIF2Parser.ChildComponentDeclarationContext ctx) {
-        this.component.prepareChildComponent();
-
-        return;
+        this.componentFactoy.prepareVariable(ComponentFactory.CHILD_COMPONENT);
     }
 
     @Override
-    public void enterChildComponentDeclarator(RIIF2Parser.ChildComponentDeclaratorContext ctx) {
-        TerminalNode Type = ctx.childcomponentDeclaratorType().Identifier();
-        TerminalNode Identifier = ctx.childComponentDeclaratorId().Identifier();
+    public void enterChildComponentDeclaratorType(RIIF2Parser.ChildComponentDeclaratorTypeContext ctx) {
+        TerminalNode Identifier = ctx.Identifier();
+        String  childComponentType = Identifier.getText();
 
-        String childComponentType = Type.getText();
-        String childComponentIdentifier = Identifier.getText();
-
-        this.component.setChildComponentType(childComponentType);
-        this.component.setChildComponentIdentifer(childComponentIdentifier);
+        this.componentFactoy.setVariableType(childComponentType);
     }
 
+    @Override
+    public void enterChildComponentDeclaratorId(RIIF2Parser.ChildComponentDeclaratorIdContext ctx) {
+        TerminalNode Identifier = ctx.Identifier();
+        String identifier = Identifier.getText();
 
+        try {
+            this.setVaribaleIdentifier(identifier);
+        } catch (VaraibaleIdentifierAlreadyExistException e) {
+            // TODO: print out exception details
+            e.printStackTrace();
+        }
+    }
 
+    private Class primitiveTypeSplitter(RIIF2Parser.PrimitiveTypeContext primitiveTypeContext) {
+        TerminalNode floatType = primitiveTypeContext.TYPE_FLOAT();
+        TerminalNode integerType = primitiveTypeContext.TYPE_INTEGER();
+        TerminalNode stringType = primitiveTypeContext.TYPE_STRING();
 
+        return (floatType != null)? Float.class :
+                    (integerType != null)? Integer.class :
+                            (stringType != null)? String.class :
+                                    null;
+    }
 }
