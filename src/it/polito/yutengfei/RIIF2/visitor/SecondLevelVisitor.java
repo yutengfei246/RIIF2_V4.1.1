@@ -2,6 +2,7 @@ package it.polito.yutengfei.RIIF2.visitor;
 
 import it.polito.yutengfei.RIIF2.RIIF2BaseVisitor;
 import it.polito.yutengfei.RIIF2.RIIF2Parser;
+import it.polito.yutengfei.RIIF2.module.Factory.Factory;
 import it.polito.yutengfei.RIIF2.provider.ComponentProvider;
 import it.polito.yutengfei.RIIF2.provider.TemplateProvider;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -20,14 +21,16 @@ public class SecondLevelVisitor extends RIIF2BaseVisitor<Boolean> {
     private final ParseTreeListener templateProvider;
     private final RIIF2Parser parser;
 
+    private Factory factory;
+
     private int moduleCounter;
 
     public SecondLevelVisitor(ParseTree parseTree, RIIF2Parser parser){
         this.parser = parser;
         this.parseTree = parseTree;
         this.walker = new ParseTreeWalker();
-        this.componentProvider = new ComponentProvider(this.parser);
-        this.templateProvider = new TemplateProvider();
+        this.componentProvider = new ComponentProvider(this.parser, Factory.newComponentFactory());
+        this.templateProvider = new TemplateProvider(this.parser, Factory.newTemplateFactory());
         this.moduleCounter = -1;
     }
 
@@ -41,6 +44,7 @@ public class SecondLevelVisitor extends RIIF2BaseVisitor<Boolean> {
 
         return true;
     }
+
 
     @Override
     public Boolean visitTemplateDeclaration(RIIF2Parser.TemplateDeclarationContext ctx) {

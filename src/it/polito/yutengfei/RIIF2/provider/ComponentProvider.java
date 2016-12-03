@@ -1,6 +1,8 @@
 package it.polito.yutengfei.RIIF2.provider;
 
 import it.polito.yutengfei.RIIF2.RIIF2Parser;
+import it.polito.yutengfei.RIIF2.module.Factory.ComponentFactory;
+import it.polito.yutengfei.RIIF2.module.Factory.Factory;
 import it.polito.yutengfei.RIIF2.module.GenericModule;
 import it.polito.yutengfei.RIIF2.parser.ComponentListener;
 import it.polito.yutengfei.RIIF2.provider._Provider;
@@ -14,8 +16,8 @@ import java.util.Map;
  */
 public class ComponentProvider extends ComponentListener implements _Provider {
 
-    public ComponentProvider(RIIF2Parser parser) {
-        super(parser);
+    public ComponentProvider(RIIF2Parser parser, ComponentFactory componentFactory) {
+        super(parser, componentFactory);
     }
 
     @Override

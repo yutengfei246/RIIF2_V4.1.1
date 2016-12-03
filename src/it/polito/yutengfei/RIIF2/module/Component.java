@@ -20,6 +20,8 @@ public class Component extends GenericModule {
     private Parameter parameter;
     private Constant constant;
     private FailMode failMode;
+    private String fieldName;
+    private String associativeName;
 
     public Component(String name) {
         super(name);
@@ -48,20 +50,61 @@ public class Component extends GenericModule {
         this.constants = constants;
     }
 
-    public boolean addParameter(String name) throws ParameterNotCompeletedException {
-
-        if( this.parameter.isCompeleted() ){
-            this.parameters.add(this.parameter);
-            return true;
-        }else
-            throw new ParameterNotCompeletedException();
-    }
-
     public void prepareParameter() {
         this.parameter = new Parameter();
     }
 
     public void prepareConstant() {
         this.constant = new Constant();
+    }
+
+
+    public void setAssociativeIdentifier(String associativeIdentifier) {
+        this.associativeIdentifier = associativeIdentifier;
+    }
+
+    public void setAssociativeInstanceIdentifier(String associativeIdentifier, String associativeInstanceIdentifer) {
+
+    }
+
+    public void prepareChildComponent() {
+
+    }
+
+    public void setChildComponentType(String childComponentType) {
+
+    }
+
+    public void setChildComponentIdentifer(String childComponentIdentifier) {
+
+    }
+
+    public void addParameter() {
+
+    }
+
+    public boolean isParameterCompleted() {
+
+
+    }
+
+    public boolean isConstantCompleted() {
+        return false;
+    }
+
+    public void addConstant() {
+
+    }
+
+    public void setVariableIdentifier(String identifier) {
+
+    }
+
+    public void setVariableType(Class cls) {
+
+    }
+
+    public Component(){
+        super(null);
     }
 }

@@ -19,4 +19,7 @@ public class Template extends GenericModule{
         super(name);
     }
 
+    public Template(){
+        super(null);
+    }
 }
