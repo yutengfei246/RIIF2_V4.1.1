@@ -150,6 +150,7 @@ public class ComponentListener extends RIIF2BaseListener {
         }
     }
 
+
     @Override
     public void exitFieldDeclaration(RIIF2Parser.FieldDeclarationContext ctx) {
         RIIF2Parser.TypeTypeContext typeTypeContext
