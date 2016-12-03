@@ -1,5 +1,6 @@
-// Generated from /usr/Intellij/ANtlr4WorkSpace/RIIF2_V4.1/RIIF2.g4 by ANTLR 4.5.3
+// Generated from /home/tengfei/IdeaProjects/RIIF2_V4.1.1/RIIF2.g4 by ANTLR 4.5.3
 package it.polito.yutengfei.RIIF2;
+import it.polito.yutengfei.RIIF2.parser.VaraibaleIdentifierAlreadyExistException;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -221,7 +222,7 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx);
+	void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException;
 	/**
 	 * Exit a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
 	 * @param ctx the parse tree
@@ -231,7 +232,7 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link RIIF2Parser#associativeDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx);
+	void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException;
 	/**
 	 * Exit a parse tree produced by {@link RIIF2Parser#associativeDeclarator}.
 	 * @param ctx the parse tree
@@ -241,7 +242,7 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link RIIF2Parser#associativeInstanceDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx);
+	void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException;
 	/**
 	 * Exit a parse tree produced by {@link RIIF2Parser#associativeInstanceDeclarator}.
 	 * @param ctx the parse tree

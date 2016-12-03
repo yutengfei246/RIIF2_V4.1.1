@@ -10,6 +10,8 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 /**
+ * SLV: second level tree visitor only visit the second level tree for distinguishing the sub-tree type
+ *
  * Created by yutengfei on 02/12/16 .
  */
 public class SecondLevelVisitor extends RIIF2BaseVisitor<Boolean> {
@@ -20,8 +22,6 @@ public class SecondLevelVisitor extends RIIF2BaseVisitor<Boolean> {
     private final ComponentProvider componentProvider;
     private final ParseTreeListener templateProvider;
     private final RIIF2Parser parser;
-
-    private Factory factory;
 
     private int moduleCounter;
 

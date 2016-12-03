@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by yutengfei on 01/12/16.
  */
-public class Parameter<T> extends Label<T>{
+public class Parameter<T> extends Label<T> implements Variable{
 
     private T value;
     private boolean compeleted;
@@ -39,5 +39,11 @@ public class Parameter<T> extends Label<T>{
 
     public boolean isCompeleted() {
         return this.compeleted;
+    }
+
+
+    @Override
+    public Boolean containsInstance(String name) {
+        return null;
     }
 }

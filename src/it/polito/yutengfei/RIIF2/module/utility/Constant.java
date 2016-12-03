@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by yutengfei on 01/12/16.
  */
-public class Constant<T> extends Label<T>{
+public class Constant<T> extends Label<T>  implements  Variable{
 
     private T constValue; // not allowed to change
 
@@ -33,4 +33,8 @@ public class Constant<T> extends Label<T>{
         return false;
     }
 
+    @Override
+    public Boolean containsInstance() {
+        return null;
+    }
 }

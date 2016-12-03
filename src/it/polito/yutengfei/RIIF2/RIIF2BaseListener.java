@@ -1,6 +1,7 @@
-// Generated from /usr/Intellij/ANtlr4WorkSpace/RIIF2_V4.1/RIIF2.g4 by ANTLR 4.5.3
+// Generated from /home/tengfei/IdeaProjects/RIIF2_V4.1.1/RIIF2.g4 by ANTLR 4.5.3
 package it.polito.yutengfei.RIIF2;
 
+import it.polito.yutengfei.RIIF2.parser.VaraibaleIdentifierAlreadyExistException;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -268,7 +269,7 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) { }
+	@Override public void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -280,7 +281,7 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx) { }
+	@Override public void enterAssociativeDeclarator(RIIF2Parser.AssociativeDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -292,7 +293,7 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) { }
+	@Override public void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) throws VaraibaleIdentifierAlreadyExistException { }
 	/**
 	 * {@inheritDoc}
 	 *
