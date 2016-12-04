@@ -4,6 +4,8 @@ import it.polito.yutengfei.RIIF2.RIIF2BaseListener;
 import it.polito.yutengfei.RIIF2.RIIF2Parser;
 import it.polito.yutengfei.RIIF2.module.Component;
 import it.polito.yutengfei.RIIF2.module.Factory.ComponentFactory;
+import it.polito.yutengfei.RIIF2.module.Factory.PrepareVariableExistException;
+import jdk.nashorn.internal.ir.Terminal;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.List;
@@ -28,9 +30,16 @@ public class ComponentListener extends RIIF2BaseListener {
     public void enterComponentDeclaration(RIIF2Parser.ComponentDeclarationContext ctx) {
         // create component with the name same
         String name = ctx.Identifier().getText();
+        this.componentFactoy.start();
         this.componentFactoy.prepareComponent(name);
 
         System.out.println("Enter ComponentListener ");
+    }
+
+    @Override
+    public void exitComponentBodyElement(RIIF2Parser.ComponentBodyElementContext ctx) {
+        //everything is good ?
+        this.componentFactoy.commit();
     }
 
     @Override
@@ -60,28 +69,33 @@ public class ComponentListener extends RIIF2BaseListener {
         TerminalNode Parameter = ctx.PARAMETER();
         TerminalNode Constant = ctx.CONSTANT();
 
-        if(Parameter != null)
-            this.componentFactoy.prepareVariable(ComponentFactory.PARAMETER);
-        if(Constant != null)
-            this.componentFactoy.prepareVariable(ComponentFactory.CONSTANT);
+        try {
+            if (Parameter != null)
+                this.componentFactoy.prepareVariable(ComponentFactory.PARAMETER);
+            if (Constant != null)
+                this.componentFactoy.prepareVariable(ComponentFactory.CONSTANT);
+        }catch (PrepareVariableExistException e){
+            //TODO; Exception print
+        }
     }
 
+
     @Override
-    public void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) {
-        RIIF2Parser.VariableDeclaratorIdContext variableDeclaratorIdContext
-                = ctx.variableDeclaratorId();
-        String identifier = variableDeclaratorIdContext.getText();
+    public void enterPrimitiveFieldDeclarator(RIIF2Parser.PrimitiveFieldDeclaratorContext ctx) {
+        RIIF2Parser.PrimitiveFieldDeclaratorIdContext primitiveFieldDeclaratorIdContext
+                = ctx.primitiveFieldDeclaratorId();
+        String identifier = primitiveFieldDeclaratorIdContext.getText();
 
         try {
-            this.setVaribaleIdentifier(identifier);
-        } catch (VaraibaleIdentifierAlreadyExistException e) {
+            this.setVariableIdentifier(identifier);
+        } catch (VariableIdentifierAlreadyExistException e) {
             //TODO: specifying the specified tokens that we expected
             e.printStackTrace();
         }
+
         TerminalNode Table = ctx.TYPE_TABLE();
-        if(Table != null){
+        if(Table != null)
             this.componentFactoy.setVariableType(ComponentFactory.TYPE_TABLE);
-        }
     }
 
     @Override
@@ -115,15 +129,9 @@ public class ComponentListener extends RIIF2BaseListener {
         //TODO: set the property tree with this value
     }
 
-
     @Override
-    public void exitVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) {
-        //TODO:  get the associatived value from last node
-    }
-
-    @Override
-    public void exitVariableInitializer(RIIF2Parser.VariableInitializerContext ctx) {
-        //TODO: get expression valure from sub-tree root ...
+    public void exitPrimitiveFieldInitializer(RIIF2Parser.PrimitiveFieldInitializerContext ctx) {
+        //TODO: retrieve value
     }
 
     @Override
@@ -132,8 +140,8 @@ public class ComponentListener extends RIIF2BaseListener {
         String identifier = Identifier.getText();
 
         try {
-            this.setVaribaleIdentifier(identifier);
-        } catch (VaraibaleIdentifierAlreadyExistException e) {
+            this.setVariableIdentifier(identifier);
+        } catch (VariableIdentifierAlreadyExistException e) {
             e.printStackTrace();
             //TODO: specifying the expected tokens
         }
@@ -141,40 +149,22 @@ public class ComponentListener extends RIIF2BaseListener {
         this.componentFactoy.setVariableType(ComponentFactory.TYPE_ASSOCIATIVE);
     }
 
-    private void setVaribaleIdentifier(String identifier) throws VaraibaleIdentifierAlreadyExistException {
-        if(this.componentFactoy.containsVariable(identifier)){
-            //TODO should throw Exception specifying expected tokens
-            throw new VaraibaleIdentifierAlreadyExistException();
-        }
-        else this.componentFactoy.setVariableIdentifier(identifier);
-    }
-
     @Override
     public void enterAssociativeInstanceDeclarator(RIIF2Parser.AssociativeInstanceDeclaratorContext ctx) {
-        List<TerminalNode> Identifiers = ctx.associativeInstanceDeclaratorId().Identifier();
+        RIIF2Parser.AssociativeInstanceDeclaratorIdContext associativeInstanceDeclaratorIdContext
+                = ctx.associativeInstanceDeclaratorId();
+        List<TerminalNode> Identifiers = associativeInstanceDeclaratorIdContext.Identifier();
         String associativeIdentifier = Identifiers.get(0).getText();
         String associativeInstanceIdentifier = Identifiers.get(1).getText();
 
-        try {
-            this.setVaribaleIdentifier(associativeIdentifier);
-            this.componentFactoy.setAssociativeVariableInstance(associativeIdentifier,associativeInstanceIdentifier);
-
-        } catch (VaraibaleIdentifierAlreadyExistException e) {
-            //since the identifier already exist so we try to set the Instance of associative array
+        if(this.componentFactoy.containsVariable(associativeIdentifier)){
             try {
                 this.componentFactoy.setAssociativeVariableInstance(associativeIdentifier,associativeInstanceIdentifier);
-            } catch (VaraibaleIdentifierAlreadyExistException e1) {
-                //TODO: here to specify the details about what happened: same instance occurs in this case
-                e1.printStackTrace();
+            } catch (VariableIdentifierAlreadyExistException e) {
+                //TODO: print out the exception
+                e.printStackTrace();
             }
-        }
-    }
-
-    @Override
-    public void exitFieldDeclaration(RIIF2Parser.FieldDeclarationContext ctx) {
-        if(this.componentFactoy.hasPreparedVariable() && this.componentFactoy.isPreparedVariableDone()) {
-            this.componentFactoy.assemblePreparedVariable();
-            this.componentFactoy.cleanPrepared();
+        }else {//TODO: here should have exception, since the component has no that association array
         }
     }
 
@@ -185,8 +175,54 @@ public class ComponentListener extends RIIF2BaseListener {
     }
 
     @Override
+    public void enterAssociativeInstanceAttributeDeclarator(RIIF2Parser.AssociativeInstanceAttributeDeclaratorContext ctx) {
+        RIIF2Parser.AssociativeInstanceAttributeDeclaratorIdContext associativeInstanceAttributeDeclaratorIdContext
+                =ctx.associativeInstanceAttributeDeclaratorId();
+        List<TerminalNode> AssociativeInstanceIdentifier
+                =associativeInstanceAttributeDeclaratorIdContext
+                    .associativeInstanceDeclaratorId()
+                        .Identifier();
+        TerminalNode AttributeIdentifier = associativeInstanceAttributeDeclaratorIdContext.Identifier();
+
+        String associativeIdentifier = AssociativeInstanceIdentifier.get(0).getText();
+        String associativeInstanceIdentifier = AssociativeInstanceIdentifier.get(1).getText();
+        String attributeIdentifier = AttributeIdentifier.getText();
+
+        if(this.componentFactoy.containsVariable(associativeIdentifier)){
+            try {
+                this.componentFactoy.setAssociativeVariableInstance(associativeIdentifier,associativeInstanceIdentifier);
+            } catch (VariableIdentifierAlreadyExistException e) {
+                try {
+                    this.componentFactoy.setAssociativeVariableInstanceAttribute(associativeIdentifier,
+                            associativeInstanceIdentifier,
+                            attributeIdentifier);
+                } catch (VariableIdentifierAlreadyExistException e1) {
+                    //here should print out the exception
+                    e1.printStackTrace();
+                }
+            }
+        }
+
+
+
+    }
+
+    @Override
+    public void exitFieldDeclaration(RIIF2Parser.FieldDeclarationContext ctx) {
+        if(this.componentFactoy.hasPreparedVariable() && this.componentFactoy.isPreparedVariableDone()) {
+            this.componentFactoy.assemblePreparedVariable(); //commit
+            this.componentFactoy.cleanPrepared();
+        }
+    }
+
+    @Override
     public void enterChildComponentDeclaration(RIIF2Parser.ChildComponentDeclarationContext ctx) {
-        this.componentFactoy.prepareVariable(ComponentFactory.CHILD_COMPONENT);
+        try {
+            this.componentFactoy.prepareVariable(ComponentFactory.CHILD_COMPONENT);
+        } catch (PrepareVariableExistException e) {
+            //TODO: exception print
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -203,11 +239,42 @@ public class ComponentListener extends RIIF2BaseListener {
         String identifier = Identifier.getText();
 
         try {
-            this.setVaribaleIdentifier(identifier);
-        } catch (VaraibaleIdentifierAlreadyExistException e) {
+            this.setVariableIdentifier(identifier);
+        } catch (VariableIdentifierAlreadyExistException e) {
             // TODO: print out exception details
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void exitChildComponentDeclaration(RIIF2Parser.ChildComponentDeclarationContext ctx) {
+        if(this.componentFactoy.hasPreparedVariable() && this.componentFactoy.isPreparedVariableDone()){
+            this.componentFactoy.assemblePreparedVariable();
+            this.componentFactoy.cleanPrepared();
+        }
+    }
+
+    @Override
+    public void enterFailModeDeclaration(RIIF2Parser.FailModeDeclarationContext ctx) {
+        try {
+            this.componentFactoy.prepareVariable(ComponentFactory.FAIL_MODE);
+        } catch (PrepareVariableExistException e) {
+            //TODO: exception print
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void exitFailModeDeclaration(RIIF2Parser.FailModeDeclarationContext ctx) {
+        this.componentFactoy.assemblePreparedVariable();
+    }
+
+    private void setVariableIdentifier(String identifier) throws VariableIdentifierAlreadyExistException {
+        if(this.componentFactoy.containsVariable(identifier)){
+            //TODO should throw Exception specifying expected tokens
+            throw new VariableIdentifierAlreadyExistException();
+        }
+        else this.componentFactoy.setVariableIdentifier(identifier);
     }
 
     private Class primitiveTypeSplitter(RIIF2Parser.PrimitiveTypeContext primitiveTypeContext) {

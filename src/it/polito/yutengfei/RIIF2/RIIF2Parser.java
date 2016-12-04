@@ -39,41 +39,43 @@ public class RIIF2Parser extends Parser {
 		RULE_templateBodyElement = 12, RULE_abstractFieldDeclaration = 13, RULE_abstractFailModeDeclaration = 14, 
 		RULE_abstractPlatformDeclaration = 15, RULE_imposeDeclaration = 16, RULE_environmentDeclaration = 17, 
 		RULE_environmentBodyElement = 18, RULE_envParameterDeclaration = 19, RULE_requirementDeclaration = 20, 
-		RULE_variableDeclarator = 21, RULE_associativeDeclarator = 22, RULE_associativeInstanceDeclarator = 23, 
+		RULE_primitiveFieldDeclarator = 21, RULE_associativeDeclarator = 22, RULE_associativeInstanceDeclarator = 23, 
 		RULE_childComponentDeclarator = 24, RULE_failModeDeclarator = 25, RULE_assignmentDeclarator = 26, 
-		RULE_imposeDeclarator = 27, RULE_variableInitializer = 28, RULE_imposeInitializer = 29, 
-		RULE_associativeInstanceDeclaratorInitializer = 30, RULE_listInitializer = 31, 
-		RULE_arrayInitializer = 32, RULE_assignmentInitializer = 33, RULE_childComponentDeclaratorId = 34, 
-		RULE_variableDeclaratorId = 35, RULE_associativeDeclaratorId = 36, RULE_associativeInstanceDeclaratorId = 37, 
-		RULE_variableId = 38, RULE_assignmentDeclaratorId = 39, RULE_assignmentVariableId = 40, 
-		RULE_assignmentVariableAttributeId = 41, RULE_assignmentTableItemId = 42, 
-		RULE_imposeDeclaratorId = 43, RULE_primitiveType = 44, RULE_typeType = 45, 
-		RULE_enumType = 46, RULE_item = 47, RULE_childComponentDeclaratorType = 48, 
-		RULE_vector = 49, RULE_identifierList = 50, RULE_extendsList = 51, RULE_implementsList = 52, 
-		RULE_expression = 53, RULE_primary = 54, RULE_literal = 55, RULE_funcCall = 56, 
-		RULE_funcName = 57, RULE_funcArg = 58;
+		RULE_imposeDeclarator = 27, RULE_associativeInstanceAttributeDeclarator = 28, 
+		RULE_primitiveFieldInitializer = 29, RULE_imposeInitializer = 30, RULE_associativeInstanceDeclaratorInitializer = 31, 
+		RULE_listInitializer = 32, RULE_arrayInitializer = 33, RULE_assignmentInitializer = 34, 
+		RULE_childComponentDeclaratorId = 35, RULE_primitiveFieldDeclaratorId = 36, 
+		RULE_associativeDeclaratorId = 37, RULE_associativeInstanceDeclaratorId = 38, 
+		RULE_associativeInstanceAttributeDeclaratorId = 39, RULE_variableId = 40, 
+		RULE_assignmentDeclaratorId = 41, RULE_assignmentVariableId = 42, RULE_assignmentVariableAttributeId = 43, 
+		RULE_assignmentTableItemId = 44, RULE_imposeDeclaratorId = 45, RULE_primitiveType = 46, 
+		RULE_typeType = 47, RULE_enumType = 48, RULE_item = 49, RULE_childComponentDeclaratorType = 50, 
+		RULE_vector = 51, RULE_identifierList = 52, RULE_extendsList = 53, RULE_implementsList = 54, 
+		RULE_expression = 55, RULE_primary = 56, RULE_literal = 57, RULE_funcCall = 58, 
+		RULE_funcName = 59, RULE_funcArg = 60;
 	public static final String[] ruleNames = {
 		"program", "typeDeclaration", "componentDeclaration", "componentBodyElement", 
 		"fieldDeclaration", "fieldElement", "childComponentDeclaration", "failModeDeclaration", 
 		"assignment", "setTemplate", "assertion", "templateDeclaration", "templateBodyElement", 
 		"abstractFieldDeclaration", "abstractFailModeDeclaration", "abstractPlatformDeclaration", 
 		"imposeDeclaration", "environmentDeclaration", "environmentBodyElement", 
-		"envParameterDeclaration", "requirementDeclaration", "variableDeclarator", 
+		"envParameterDeclaration", "requirementDeclaration", "primitiveFieldDeclarator", 
 		"associativeDeclarator", "associativeInstanceDeclarator", "childComponentDeclarator", 
-		"failModeDeclarator", "assignmentDeclarator", "imposeDeclarator", "variableInitializer", 
-		"imposeInitializer", "associativeInstanceDeclaratorInitializer", "listInitializer", 
-		"arrayInitializer", "assignmentInitializer", "childComponentDeclaratorId", 
-		"variableDeclaratorId", "associativeDeclaratorId", "associativeInstanceDeclaratorId", 
-		"variableId", "assignmentDeclaratorId", "assignmentVariableId", "assignmentVariableAttributeId", 
-		"assignmentTableItemId", "imposeDeclaratorId", "primitiveType", "typeType", 
-		"enumType", "item", "childComponentDeclaratorType", "vector", "identifierList", 
-		"extendsList", "implementsList", "expression", "primary", "literal", "funcCall", 
-		"funcName", "funcArg"
+		"failModeDeclarator", "assignmentDeclarator", "imposeDeclarator", "associativeInstanceAttributeDeclarator", 
+		"primitiveFieldInitializer", "imposeInitializer", "associativeInstanceDeclaratorInitializer", 
+		"listInitializer", "arrayInitializer", "assignmentInitializer", "childComponentDeclaratorId", 
+		"primitiveFieldDeclaratorId", "associativeDeclaratorId", "associativeInstanceDeclaratorId", 
+		"associativeInstanceAttributeDeclaratorId", "variableId", "assignmentDeclaratorId", 
+		"assignmentVariableId", "assignmentVariableAttributeId", "assignmentTableItemId", 
+		"imposeDeclaratorId", "primitiveType", "typeType", "enumType", "item", 
+		"childComponentDeclaratorType", "vector", "identifierList", "extendsList", 
+		"implementsList", "expression", "primary", "literal", "funcCall", "funcName", 
+		"funcArg"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
 		null, "';'", "'<'", "'>'", "':'", "':='", "'='", "'{'", "','", "'}'", 
-		"'['", "']'", "'.'", "'''", "'#'", "'+'", "'-'", "'~'", "'!'", "'*'", 
+		"'['", "']'", "'''", "'.'", "'#'", "'+'", "'-'", "'~'", "'!'", "'*'", 
 		"'/'", "'%'", "'<='", "'>='", "'=='", "'!='", "'&'", "'^'", "'|'", "'&&'", 
 		"'||'", "'?'", "'+='", "'-='", "'*='", "'/='", "'&='", "'|='", "'^='", 
 		"'>>='", "'>>>='", "'<<='", "'%='", "'('", "')'", "'component'", "'endcomponent'", 
@@ -180,21 +182,21 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(119); 
+			setState(123); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(118);
+				setState(122);
 				typeDeclaration();
 				}
 				}
-				setState(121); 
+				setState(125); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( ((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (COMPONENT - 45)) | (1L << (ENVIRONMENT - 45)) | (1L << (REQUIREMENT - 45)) | (1L << (TEMPLATE - 45)))) != 0) );
-			setState(123);
+			setState(127);
 			match(EOF);
 			}
 		}
@@ -245,33 +247,33 @@ public class RIIF2Parser extends Parser {
 		TypeDeclarationContext _localctx = new TypeDeclarationContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_typeDeclaration);
 		try {
-			setState(129);
+			setState(133);
 			switch (_input.LA(1)) {
 			case COMPONENT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(125);
+				setState(129);
 				componentDeclaration();
 				}
 				break;
 			case TEMPLATE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(126);
+				setState(130);
 				templateDeclaration();
 				}
 				break;
 			case ENVIRONMENT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(127);
+				setState(131);
 				environmentDeclaration();
 				}
 				break;
 			case REQUIREMENT:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(128);
+				setState(132);
 				requirementDeclaration();
 				}
 				break;
@@ -334,49 +336,49 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(131);
-			match(COMPONENT);
-			setState(132);
-			match(Identifier);
 			setState(135);
+			match(COMPONENT);
+			setState(136);
+			match(Identifier);
+			setState(139);
 			_la = _input.LA(1);
 			if (_la==EXTENDS) {
 				{
-				setState(133);
+				setState(137);
 				match(EXTENDS);
-				setState(134);
+				setState(138);
 				extendsList();
 				}
 			}
 
-			setState(139);
+			setState(143);
 			_la = _input.LA(1);
 			if (_la==IMPLEMENTS) {
 				{
-				setState(137);
+				setState(141);
 				match(IMPLEMENTS);
-				setState(138);
+				setState(142);
 				implementsList();
 				}
 			}
 
-			setState(141);
-			match(T__0);
 			setState(145);
+			match(T__0);
+			setState(149);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & ((1L << (CHILD_COMPONENT - 51)) | (1L << (FAIL_MODE - 51)) | (1L << (ASSIGN - 51)) | (1L << (ASSERT - 51)) | (1L << (PARAMETER - 51)) | (1L << (CONSTANT - 51)) | (1L << (SET - 51)))) != 0)) {
+			while (((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & ((1L << (CHILD_COMPONENT - 51)) | (1L << (FAIL_MODE - 51)) | (1L << (ASSIGN - 51)) | (1L << (ASSERT - 51)) | (1L << (PARAMETER - 51)) | (1L << (CONSTANT - 51)) | (1L << (SET - 51)) | (1L << (Identifier - 51)))) != 0)) {
 				{
 				{
-				setState(142);
+				setState(146);
 				componentBodyElement();
 				}
 				}
-				setState(147);
+				setState(151);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(148);
+			setState(152);
 			match(END_COMPONENT);
 			}
 		}
@@ -433,48 +435,49 @@ public class RIIF2Parser extends Parser {
 		ComponentBodyElementContext _localctx = new ComponentBodyElementContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_componentBodyElement);
 		try {
-			setState(156);
+			setState(160);
 			switch (_input.LA(1)) {
 			case PARAMETER:
 			case CONSTANT:
+			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(150);
+				setState(154);
 				fieldDeclaration();
 				}
 				break;
 			case CHILD_COMPONENT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(151);
+				setState(155);
 				childComponentDeclaration();
 				}
 				break;
 			case FAIL_MODE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(152);
+				setState(156);
 				failModeDeclaration();
 				}
 				break;
 			case ASSIGN:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(153);
+				setState(157);
 				assignment();
 				}
 				break;
 			case SET:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(154);
+				setState(158);
 				setTemplate();
 				}
 				break;
 			case ASSERT:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(155);
+				setState(159);
 				assertion();
 				}
 				break;
@@ -500,6 +503,12 @@ public class RIIF2Parser extends Parser {
 		public FieldElementContext fieldElement() {
 			return getRuleContext(FieldElementContext.class,0);
 		}
+		public AssociativeInstanceDeclaratorContext associativeInstanceDeclarator() {
+			return getRuleContext(AssociativeInstanceDeclaratorContext.class,0);
+		}
+		public AssociativeInstanceAttributeDeclaratorContext associativeInstanceAttributeDeclarator() {
+			return getRuleContext(AssociativeInstanceAttributeDeclaratorContext.class,0);
+		}
 		public FieldDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -523,14 +532,38 @@ public class RIIF2Parser extends Parser {
 		FieldDeclarationContext _localctx = new FieldDeclarationContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_fieldDeclaration);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(158);
-			typeType();
-			setState(159);
-			fieldElement();
-			setState(160);
-			match(T__0);
+			setState(172);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(162);
+				typeType();
+				setState(163);
+				fieldElement();
+				setState(164);
+				match(T__0);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(166);
+				associativeInstanceDeclarator();
+				setState(167);
+				match(T__0);
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(169);
+				associativeInstanceAttributeDeclarator();
+				setState(170);
+				match(T__0);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -545,14 +578,11 @@ public class RIIF2Parser extends Parser {
 	}
 
 	public static class FieldElementContext extends ParserRuleContext {
-		public VariableDeclaratorContext variableDeclarator() {
-			return getRuleContext(VariableDeclaratorContext.class,0);
+		public PrimitiveFieldDeclaratorContext primitiveFieldDeclarator() {
+			return getRuleContext(PrimitiveFieldDeclaratorContext.class,0);
 		}
 		public AssociativeDeclaratorContext associativeDeclarator() {
 			return getRuleContext(AssociativeDeclaratorContext.class,0);
-		}
-		public AssociativeInstanceDeclaratorContext associativeInstanceDeclarator() {
-			return getRuleContext(AssociativeInstanceDeclaratorContext.class,0);
 		}
 		public FieldElementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -577,28 +607,21 @@ public class RIIF2Parser extends Parser {
 		FieldElementContext _localctx = new FieldElementContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_fieldElement);
 		try {
-			setState(165);
+			setState(176);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(162);
-				variableDeclarator();
+				setState(174);
+				primitiveFieldDeclarator();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(163);
+				setState(175);
 				associativeDeclarator();
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(164);
-				associativeInstanceDeclarator();
 				}
 				break;
 			}
@@ -644,11 +667,11 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(167);
+			setState(178);
 			match(CHILD_COMPONENT);
-			setState(168);
+			setState(179);
 			childComponentDeclarator();
-			setState(169);
+			setState(180);
 			match(T__0);
 			}
 		}
@@ -693,11 +716,11 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(171);
+			setState(182);
 			match(FAIL_MODE);
-			setState(172);
+			setState(183);
 			failModeDeclarator();
-			setState(173);
+			setState(184);
 			match(T__0);
 			}
 		}
@@ -742,11 +765,11 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(175);
+			setState(186);
 			match(ASSIGN);
-			setState(176);
+			setState(187);
 			assignmentDeclarator();
-			setState(177);
+			setState(188);
 			match(T__0);
 			}
 		}
@@ -791,11 +814,11 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(179);
+			setState(190);
 			match(SET);
-			setState(180);
+			setState(191);
 			assignmentDeclarator();
-			setState(181);
+			setState(192);
 			match(T__0);
 			}
 		}
@@ -844,22 +867,22 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(183);
+			setState(194);
 			match(ASSERT);
 			{
-			setState(184);
+			setState(195);
 			assignmentVariableAttributeId();
 			}
-			setState(185);
+			setState(196);
 			_la = _input.LA(1);
 			if ( !(_la==T__1 || _la==T__2) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(186);
+			setState(197);
 			expression(0);
-			setState(187);
+			setState(198);
 			match(T__0);
 			}
 		}
@@ -914,38 +937,38 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(189);
+			setState(200);
 			match(TEMPLATE);
-			setState(190);
+			setState(201);
 			match(Identifier);
-			setState(193);
+			setState(204);
 			_la = _input.LA(1);
 			if (_la==EXTENDS) {
 				{
-				setState(191);
+				setState(202);
 				match(EXTENDS);
-				setState(192);
+				setState(203);
 				match(Identifier);
 				}
 			}
 
-			setState(195);
+			setState(206);
 			match(T__0);
-			setState(199);
+			setState(210);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==IMPOSE || _la==ABSTRACT) {
 				{
 				{
-				setState(196);
+				setState(207);
 				templateBodyElement();
 				}
 				}
-				setState(201);
+				setState(212);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(202);
+			setState(213);
 			match(END_TEMPLATE);
 			}
 		}
@@ -996,34 +1019,34 @@ public class RIIF2Parser extends Parser {
 		TemplateBodyElementContext _localctx = new TemplateBodyElementContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_templateBodyElement);
 		try {
-			setState(208);
+			setState(219);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(204);
+				setState(215);
 				abstractFieldDeclaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(205);
+				setState(216);
 				abstractFailModeDeclaration();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(206);
+				setState(217);
 				abstractPlatformDeclaration();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(207);
+				setState(218);
 				imposeDeclaration();
 				}
 				break;
@@ -1070,9 +1093,9 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(210);
+			setState(221);
 			match(ABSTRACT);
-			setState(211);
+			setState(222);
 			fieldDeclaration();
 			}
 		}
@@ -1117,9 +1140,9 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(213);
+			setState(224);
 			match(ABSTRACT);
-			setState(214);
+			setState(225);
 			failModeDeclaration();
 			}
 		}
@@ -1163,13 +1186,13 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(216);
+			setState(227);
 			match(ABSTRACT);
-			setState(217);
+			setState(228);
 			match(PLATFORM);
-			setState(218);
+			setState(229);
 			match(Identifier);
-			setState(219);
+			setState(230);
 			match(T__0);
 			}
 		}
@@ -1214,11 +1237,11 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(221);
+			setState(232);
 			match(IMPOSE);
-			setState(222);
+			setState(233);
 			imposeDeclarator();
-			setState(223);
+			setState(234);
 			match(T__0);
 			}
 		}
@@ -1269,27 +1292,27 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(225);
+			setState(236);
 			match(ENVIRONMENT);
-			setState(226);
+			setState(237);
 			match(Identifier);
-			setState(227);
+			setState(238);
 			match(T__0);
-			setState(231);
+			setState(242);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ASSIGN) | (1L << INPUT) | (1L << OUTPUT))) != 0)) {
 				{
 				{
-				setState(228);
+				setState(239);
 				environmentBodyElement();
 				}
 				}
-				setState(233);
+				setState(244);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(234);
+			setState(245);
 			match(END_ENVIRONMENT);
 			}
 		}
@@ -1334,12 +1357,12 @@ public class RIIF2Parser extends Parser {
 		EnvironmentBodyElementContext _localctx = new EnvironmentBodyElementContext(_ctx, getState());
 		enterRule(_localctx, 36, RULE_environmentBodyElement);
 		try {
-			setState(238);
+			setState(249);
 			switch (_input.LA(1)) {
 			case ASSIGN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(236);
+				setState(247);
 				assignment();
 				}
 				break;
@@ -1347,7 +1370,7 @@ public class RIIF2Parser extends Parser {
 			case OUTPUT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(237);
+				setState(248);
 				envParameterDeclaration();
 				}
 				break;
@@ -1405,33 +1428,33 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(240);
+			setState(251);
 			_la = _input.LA(1);
 			if ( !(_la==INPUT || _la==OUTPUT) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(241);
+			setState(252);
 			match(PARAMETER);
-			setState(242);
+			setState(253);
 			variableId();
-			setState(243);
+			setState(254);
 			match(T__3);
-			setState(244);
+			setState(255);
 			primitiveType();
-			setState(247);
+			setState(258);
 			_la = _input.LA(1);
 			if (_la==T__4) {
 				{
-				setState(245);
+				setState(256);
 				match(T__4);
-				setState(246);
+				setState(257);
 				expression(0);
 				}
 			}
 
-			setState(249);
+			setState(260);
 			match(T__0);
 			}
 		}
@@ -1482,27 +1505,27 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(251);
+			setState(262);
 			match(REQUIREMENT);
-			setState(252);
+			setState(263);
 			match(Identifier);
-			setState(253);
+			setState(264);
 			match(T__0);
-			setState(257);
+			setState(268);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==ASSERT) {
 				{
 				{
-				setState(254);
+				setState(265);
 				assertion();
 				}
 				}
-				setState(259);
+				setState(270);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(260);
+			setState(271);
 			match(END_REQUIREMENT);
 			}
 		}
@@ -1517,9 +1540,9 @@ public class RIIF2Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class VariableDeclaratorContext extends ParserRuleContext {
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
+	public static class PrimitiveFieldDeclaratorContext extends ParserRuleContext {
+		public PrimitiveFieldDeclaratorIdContext primitiveFieldDeclaratorId() {
+			return getRuleContext(PrimitiveFieldDeclaratorIdContext.class,0);
 		}
 		public PrimitiveTypeContext primitiveType() {
 			return getRuleContext(PrimitiveTypeContext.class,0);
@@ -1528,54 +1551,54 @@ public class RIIF2Parser extends Parser {
 		public ListInitializerContext listInitializer() {
 			return getRuleContext(ListInitializerContext.class,0);
 		}
-		public VariableInitializerContext variableInitializer() {
-			return getRuleContext(VariableInitializerContext.class,0);
+		public PrimitiveFieldInitializerContext primitiveFieldInitializer() {
+			return getRuleContext(PrimitiveFieldInitializerContext.class,0);
 		}
-		public VariableDeclaratorContext(ParserRuleContext parent, int invokingState) {
+		public PrimitiveFieldDeclaratorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_variableDeclarator; }
+		@Override public int getRuleIndex() { return RULE_primitiveFieldDeclarator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterVariableDeclarator(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterPrimitiveFieldDeclarator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitVariableDeclarator(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitPrimitiveFieldDeclarator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitVariableDeclarator(this);
+			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitPrimitiveFieldDeclarator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final VariableDeclaratorContext variableDeclarator() throws RecognitionException {
-		VariableDeclaratorContext _localctx = new VariableDeclaratorContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_variableDeclarator);
+	public final PrimitiveFieldDeclaratorContext primitiveFieldDeclarator() throws RecognitionException {
+		PrimitiveFieldDeclaratorContext _localctx = new PrimitiveFieldDeclaratorContext(_ctx, getState());
+		enterRule(_localctx, 42, RULE_primitiveFieldDeclarator);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(262);
-			variableDeclaratorId();
 			setState(273);
+			primitiveFieldDeclaratorId();
+			setState(284);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
 			case 1:
 				{
-				setState(263);
+				setState(274);
 				match(T__3);
-				setState(264);
+				setState(275);
 				primitiveType();
-				setState(267);
+				setState(278);
 				_la = _input.LA(1);
 				if (_la==T__4) {
 					{
-					setState(265);
+					setState(276);
 					match(T__4);
-					setState(266);
-					variableInitializer();
+					setState(277);
+					primitiveFieldInitializer();
 					}
 				}
 
@@ -1583,17 +1606,17 @@ public class RIIF2Parser extends Parser {
 				break;
 			case 2:
 				{
-				setState(269);
+				setState(280);
 				match(T__3);
-				setState(270);
+				setState(281);
 				match(TYPE_TABLE);
 				}
 				break;
 			case 3:
 				{
-				setState(271);
+				setState(282);
 				match(T__4);
-				setState(272);
+				setState(283);
 				listInitializer();
 				}
 				break;
@@ -1640,7 +1663,7 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(275);
+			setState(286);
 			associativeDeclaratorId();
 			}
 		}
@@ -1688,15 +1711,15 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(277);
+			setState(288);
 			associativeInstanceDeclaratorId();
-			setState(280);
+			setState(291);
 			_la = _input.LA(1);
 			if (_la==T__4) {
 				{
-				setState(278);
+				setState(289);
 				match(T__4);
-				setState(279);
+				setState(290);
 				associativeInstanceDeclaratorInitializer();
 				}
 			}
@@ -1750,15 +1773,15 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(282);
+			setState(293);
 			childComponentDeclaratorType();
-			setState(283);
+			setState(294);
 			childComponentDeclaratorId();
-			setState(285);
+			setState(296);
 			_la = _input.LA(1);
 			if (_la==T__9) {
 				{
-				setState(284);
+				setState(295);
 				vector();
 				}
 			}
@@ -1777,8 +1800,8 @@ public class RIIF2Parser extends Parser {
 	}
 
 	public static class FailModeDeclaratorContext extends ParserRuleContext {
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
+		public PrimitiveFieldDeclaratorIdContext primitiveFieldDeclaratorId() {
+			return getRuleContext(PrimitiveFieldDeclaratorIdContext.class,0);
 		}
 		public AssociativeDeclaratorIdContext associativeDeclaratorId() {
 			return getRuleContext(AssociativeDeclaratorIdContext.class,0);
@@ -1809,27 +1832,27 @@ public class RIIF2Parser extends Parser {
 		FailModeDeclaratorContext _localctx = new FailModeDeclaratorContext(_ctx, getState());
 		enterRule(_localctx, 50, RULE_failModeDeclarator);
 		try {
-			setState(290);
+			setState(301);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,19,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(287);
-				variableDeclaratorId();
+				setState(298);
+				primitiveFieldDeclaratorId();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(288);
+				setState(299);
 				associativeDeclaratorId();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(289);
+				setState(300);
 				associativeInstanceDeclaratorId();
 				}
 				break;
@@ -1882,20 +1905,20 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(292);
+			setState(303);
 			assignmentDeclaratorId();
-			setState(294);
+			setState(305);
 			_la = _input.LA(1);
 			if (_la==T__9) {
 				{
-				setState(293);
+				setState(304);
 				vector();
 				}
 			}
 
-			setState(296);
+			setState(307);
 			match(T__5);
-			setState(297);
+			setState(308);
 			assignmentInitializer();
 			}
 		}
@@ -1942,11 +1965,11 @@ public class RIIF2Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(299);
+			setState(310);
 			imposeDeclaratorId();
-			setState(300);
+			setState(311);
 			match(T__5);
-			setState(301);
+			setState(312);
 			imposeInitializer();
 			}
 		}
@@ -1961,36 +1984,80 @@ public class RIIF2Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class VariableInitializerContext extends ParserRuleContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+	public static class AssociativeInstanceAttributeDeclaratorContext extends ParserRuleContext {
+		public AssociativeInstanceAttributeDeclaratorIdContext associativeInstanceAttributeDeclaratorId() {
+			return getRuleContext(AssociativeInstanceAttributeDeclaratorIdContext.class,0);
 		}
-		public VariableInitializerContext(ParserRuleContext parent, int invokingState) {
+		public AssociativeInstanceAttributeDeclaratorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_variableInitializer; }
+		@Override public int getRuleIndex() { return RULE_associativeInstanceAttributeDeclarator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterVariableInitializer(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterAssociativeInstanceAttributeDeclarator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitVariableInitializer(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitAssociativeInstanceAttributeDeclarator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitVariableInitializer(this);
+			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitAssociativeInstanceAttributeDeclarator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final VariableInitializerContext variableInitializer() throws RecognitionException {
-		VariableInitializerContext _localctx = new VariableInitializerContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_variableInitializer);
+	public final AssociativeInstanceAttributeDeclaratorContext associativeInstanceAttributeDeclarator() throws RecognitionException {
+		AssociativeInstanceAttributeDeclaratorContext _localctx = new AssociativeInstanceAttributeDeclaratorContext(_ctx, getState());
+		enterRule(_localctx, 56, RULE_associativeInstanceAttributeDeclarator);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(303);
+			setState(314);
+			associativeInstanceAttributeDeclaratorId();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class PrimitiveFieldInitializerContext extends ParserRuleContext {
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public PrimitiveFieldInitializerContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_primitiveFieldInitializer; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterPrimitiveFieldInitializer(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitPrimitiveFieldInitializer(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitPrimitiveFieldInitializer(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final PrimitiveFieldInitializerContext primitiveFieldInitializer() throws RecognitionException {
+		PrimitiveFieldInitializerContext _localctx = new PrimitiveFieldInitializerContext(_ctx, getState());
+		enterRule(_localctx, 58, RULE_primitiveFieldInitializer);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(316);
 			expression(0);
 			}
 		}
@@ -2030,11 +2097,11 @@ public class RIIF2Parser extends Parser {
 
 	public final ImposeInitializerContext imposeInitializer() throws RecognitionException {
 		ImposeInitializerContext _localctx = new ImposeInitializerContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_imposeInitializer);
+		enterRule(_localctx, 60, RULE_imposeInitializer);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(305);
+			setState(318);
 			assignmentInitializer();
 			}
 		}
@@ -2074,11 +2141,11 @@ public class RIIF2Parser extends Parser {
 
 	public final AssociativeInstanceDeclaratorInitializerContext associativeInstanceDeclaratorInitializer() throws RecognitionException {
 		AssociativeInstanceDeclaratorInitializerContext _localctx = new AssociativeInstanceDeclaratorInitializerContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_associativeInstanceDeclaratorInitializer);
+		enterRule(_localctx, 62, RULE_associativeInstanceDeclaratorInitializer);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(307);
+			setState(320);
 			assignmentInitializer();
 			}
 		}
@@ -2121,32 +2188,32 @@ public class RIIF2Parser extends Parser {
 
 	public final ListInitializerContext listInitializer() throws RecognitionException {
 		ListInitializerContext _localctx = new ListInitializerContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_listInitializer);
+		enterRule(_localctx, 64, RULE_listInitializer);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(309);
+			setState(322);
 			match(T__6);
-			setState(310);
+			setState(323);
 			item();
-			setState(315);
+			setState(328);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__7) {
 				{
 				{
-				setState(311);
+				setState(324);
 				match(T__7);
-				setState(312);
+				setState(325);
 				item();
 				}
 				}
-				setState(317);
+				setState(330);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(318);
+			setState(331);
 			match(T__8);
 			}
 		}
@@ -2189,32 +2256,32 @@ public class RIIF2Parser extends Parser {
 
 	public final ArrayInitializerContext arrayInitializer() throws RecognitionException {
 		ArrayInitializerContext _localctx = new ArrayInitializerContext(_ctx, getState());
-		enterRule(_localctx, 64, RULE_arrayInitializer);
+		enterRule(_localctx, 66, RULE_arrayInitializer);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(320);
+			setState(333);
 			match(T__9);
-			setState(321);
+			setState(334);
 			item();
-			setState(326);
+			setState(339);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__7) {
 				{
 				{
-				setState(322);
+				setState(335);
 				match(T__7);
-				setState(323);
+				setState(336);
 				item();
 				}
 				}
-				setState(328);
+				setState(341);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(329);
+			setState(342);
 			match(T__10);
 			}
 		}
@@ -2254,11 +2321,11 @@ public class RIIF2Parser extends Parser {
 
 	public final AssignmentInitializerContext assignmentInitializer() throws RecognitionException {
 		AssignmentInitializerContext _localctx = new AssignmentInitializerContext(_ctx, getState());
-		enterRule(_localctx, 66, RULE_assignmentInitializer);
+		enterRule(_localctx, 68, RULE_assignmentInitializer);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(331);
+			setState(344);
 			item();
 			}
 		}
@@ -2296,11 +2363,11 @@ public class RIIF2Parser extends Parser {
 
 	public final ChildComponentDeclaratorIdContext childComponentDeclaratorId() throws RecognitionException {
 		ChildComponentDeclaratorIdContext _localctx = new ChildComponentDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 68, RULE_childComponentDeclaratorId);
+		enterRule(_localctx, 70, RULE_childComponentDeclaratorId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(333);
+			setState(346);
 			match(Identifier);
 			}
 		}
@@ -2315,34 +2382,34 @@ public class RIIF2Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class VariableDeclaratorIdContext extends ParserRuleContext {
+	public static class PrimitiveFieldDeclaratorIdContext extends ParserRuleContext {
 		public TerminalNode Identifier() { return getToken(RIIF2Parser.Identifier, 0); }
-		public VariableDeclaratorIdContext(ParserRuleContext parent, int invokingState) {
+		public PrimitiveFieldDeclaratorIdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_variableDeclaratorId; }
+		@Override public int getRuleIndex() { return RULE_primitiveFieldDeclaratorId; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterVariableDeclaratorId(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterPrimitiveFieldDeclaratorId(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitVariableDeclaratorId(this);
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitPrimitiveFieldDeclaratorId(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitVariableDeclaratorId(this);
+			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitPrimitiveFieldDeclaratorId(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final VariableDeclaratorIdContext variableDeclaratorId() throws RecognitionException {
-		VariableDeclaratorIdContext _localctx = new VariableDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_variableDeclaratorId);
+	public final PrimitiveFieldDeclaratorIdContext primitiveFieldDeclaratorId() throws RecognitionException {
+		PrimitiveFieldDeclaratorIdContext _localctx = new PrimitiveFieldDeclaratorIdContext(_ctx, getState());
+		enterRule(_localctx, 72, RULE_primitiveFieldDeclaratorId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(335);
+			setState(348);
 			match(Identifier);
 			}
 		}
@@ -2380,15 +2447,15 @@ public class RIIF2Parser extends Parser {
 
 	public final AssociativeDeclaratorIdContext associativeDeclaratorId() throws RecognitionException {
 		AssociativeDeclaratorIdContext _localctx = new AssociativeDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 72, RULE_associativeDeclaratorId);
+		enterRule(_localctx, 74, RULE_associativeDeclaratorId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(337);
+			setState(350);
 			match(Identifier);
-			setState(338);
+			setState(351);
 			match(T__9);
-			setState(339);
+			setState(352);
 			match(T__10);
 			}
 		}
@@ -2429,17 +2496,17 @@ public class RIIF2Parser extends Parser {
 
 	public final AssociativeInstanceDeclaratorIdContext associativeInstanceDeclaratorId() throws RecognitionException {
 		AssociativeInstanceDeclaratorIdContext _localctx = new AssociativeInstanceDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 74, RULE_associativeInstanceDeclaratorId);
+		enterRule(_localctx, 76, RULE_associativeInstanceDeclaratorId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(341);
+			setState(354);
 			match(Identifier);
-			setState(342);
+			setState(355);
 			match(T__9);
-			setState(343);
+			setState(356);
 			match(Identifier);
-			setState(344);
+			setState(357);
 			match(T__10);
 			}
 		}
@@ -2454,9 +2521,58 @@ public class RIIF2Parser extends Parser {
 		return _localctx;
 	}
 
+	public static class AssociativeInstanceAttributeDeclaratorIdContext extends ParserRuleContext {
+		public AssociativeInstanceDeclaratorIdContext associativeInstanceDeclaratorId() {
+			return getRuleContext(AssociativeInstanceDeclaratorIdContext.class,0);
+		}
+		public TerminalNode Identifier() { return getToken(RIIF2Parser.Identifier, 0); }
+		public AssociativeInstanceAttributeDeclaratorIdContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_associativeInstanceAttributeDeclaratorId; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).enterAssociativeInstanceAttributeDeclaratorId(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RIIF2Listener ) ((RIIF2Listener)listener).exitAssociativeInstanceAttributeDeclaratorId(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RIIF2Visitor ) return ((RIIF2Visitor<? extends T>)visitor).visitAssociativeInstanceAttributeDeclaratorId(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssociativeInstanceAttributeDeclaratorIdContext associativeInstanceAttributeDeclaratorId() throws RecognitionException {
+		AssociativeInstanceAttributeDeclaratorIdContext _localctx = new AssociativeInstanceAttributeDeclaratorIdContext(_ctx, getState());
+		enterRule(_localctx, 78, RULE_associativeInstanceAttributeDeclaratorId);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(359);
+			associativeInstanceDeclaratorId();
+			setState(360);
+			match(T__11);
+			setState(361);
+			match(Identifier);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static class VariableIdContext extends ParserRuleContext {
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
+		public PrimitiveFieldDeclaratorIdContext primitiveFieldDeclaratorId() {
+			return getRuleContext(PrimitiveFieldDeclaratorIdContext.class,0);
 		}
 		public AssociativeInstanceDeclaratorIdContext associativeInstanceDeclaratorId() {
 			return getRuleContext(AssociativeInstanceDeclaratorIdContext.class,0);
@@ -2482,22 +2598,22 @@ public class RIIF2Parser extends Parser {
 
 	public final VariableIdContext variableId() throws RecognitionException {
 		VariableIdContext _localctx = new VariableIdContext(_ctx, getState());
-		enterRule(_localctx, 76, RULE_variableId);
+		enterRule(_localctx, 80, RULE_variableId);
 		try {
-			setState(348);
+			setState(365);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,22,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(346);
-				variableDeclaratorId();
+				setState(363);
+				primitiveFieldDeclaratorId();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(347);
+				setState(364);
 				associativeInstanceDeclaratorId();
 				}
 				break;
@@ -2545,29 +2661,29 @@ public class RIIF2Parser extends Parser {
 
 	public final AssignmentDeclaratorIdContext assignmentDeclaratorId() throws RecognitionException {
 		AssignmentDeclaratorIdContext _localctx = new AssignmentDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 78, RULE_assignmentDeclaratorId);
+		enterRule(_localctx, 82, RULE_assignmentDeclaratorId);
 		try {
-			setState(353);
+			setState(370);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,24,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(350);
+				setState(367);
 				assignmentVariableId();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(351);
+				setState(368);
 				assignmentVariableAttributeId();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(352);
+				setState(369);
 				assignmentTableItemId();
 				}
 				break;
@@ -2613,30 +2729,30 @@ public class RIIF2Parser extends Parser {
 
 	public final AssignmentVariableIdContext assignmentVariableId() throws RecognitionException {
 		AssignmentVariableIdContext _localctx = new AssignmentVariableIdContext(_ctx, getState());
-		enterRule(_localctx, 80, RULE_assignmentVariableId);
+		enterRule(_localctx, 84, RULE_assignmentVariableId);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(359);
+			setState(376);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,24,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,25,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(355);
+					setState(372);
 					match(Identifier);
-					setState(356);
-					match(T__11);
+					setState(373);
+					match(T__12);
 					}
 					} 
 				}
-				setState(361);
+				setState(378);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,24,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,25,_ctx);
 			}
-			setState(362);
+			setState(379);
 			variableId();
 			}
 		}
@@ -2677,15 +2793,15 @@ public class RIIF2Parser extends Parser {
 
 	public final AssignmentVariableAttributeIdContext assignmentVariableAttributeId() throws RecognitionException {
 		AssignmentVariableAttributeIdContext _localctx = new AssignmentVariableAttributeIdContext(_ctx, getState());
-		enterRule(_localctx, 82, RULE_assignmentVariableAttributeId);
+		enterRule(_localctx, 86, RULE_assignmentVariableAttributeId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(364);
+			setState(381);
 			assignmentVariableId();
-			setState(365);
-			match(T__12);
-			setState(366);
+			setState(382);
+			match(T__11);
+			setState(383);
 			match(Identifier);
 			}
 		}
@@ -2729,29 +2845,29 @@ public class RIIF2Parser extends Parser {
 
 	public final AssignmentTableItemIdContext assignmentTableItemId() throws RecognitionException {
 		AssignmentTableItemIdContext _localctx = new AssignmentTableItemIdContext(_ctx, getState());
-		enterRule(_localctx, 84, RULE_assignmentTableItemId);
+		enterRule(_localctx, 88, RULE_assignmentTableItemId);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(368);
+			setState(385);
 			assignmentVariableAttributeId();
-			setState(369);
+			setState(386);
 			match(T__9);
-			setState(370);
+			setState(387);
 			_la = _input.LA(1);
 			if ( !(_la==T__13 || _la==Identifier) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(371);
+			setState(388);
 			match(T__10);
-			setState(372);
+			setState(389);
 			match(T__9);
-			setState(373);
+			setState(390);
 			match(Identifier);
-			setState(374);
+			setState(391);
 			match(T__10);
 			}
 		}
@@ -2791,11 +2907,11 @@ public class RIIF2Parser extends Parser {
 
 	public final ImposeDeclaratorIdContext imposeDeclaratorId() throws RecognitionException {
 		ImposeDeclaratorIdContext _localctx = new ImposeDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 86, RULE_imposeDeclaratorId);
+		enterRule(_localctx, 90, RULE_imposeDeclaratorId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(376);
+			setState(393);
 			assignmentDeclaratorId();
 			}
 		}
@@ -2839,42 +2955,42 @@ public class RIIF2Parser extends Parser {
 
 	public final PrimitiveTypeContext primitiveType() throws RecognitionException {
 		PrimitiveTypeContext _localctx = new PrimitiveTypeContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_primitiveType);
+		enterRule(_localctx, 92, RULE_primitiveType);
 		try {
-			setState(383);
+			setState(400);
 			switch (_input.LA(1)) {
 			case TYPE_FLOAT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(378);
+				setState(395);
 				match(TYPE_FLOAT);
 				}
 				break;
 			case TYPE_INTEGER:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(379);
+				setState(396);
 				match(TYPE_INTEGER);
 				}
 				break;
 			case TYPE_STRING:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(380);
+				setState(397);
 				match(TYPE_STRING);
 				}
 				break;
 			case Identifier:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(381);
+				setState(398);
 				match(Identifier);
 				}
 				break;
 			case TYPE_ENUM:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(382);
+				setState(399);
 				enumType();
 				}
 				break;
@@ -2917,12 +3033,12 @@ public class RIIF2Parser extends Parser {
 
 	public final TypeTypeContext typeType() throws RecognitionException {
 		TypeTypeContext _localctx = new TypeTypeContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_typeType);
+		enterRule(_localctx, 94, RULE_typeType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(385);
+			setState(402);
 			_la = _input.LA(1);
 			if ( !(_la==PARAMETER || _la==CONSTANT) ) {
 			_errHandler.recoverInline(this);
@@ -2969,34 +3085,34 @@ public class RIIF2Parser extends Parser {
 
 	public final EnumTypeContext enumType() throws RecognitionException {
 		EnumTypeContext _localctx = new EnumTypeContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_enumType);
+		enterRule(_localctx, 96, RULE_enumType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(387);
+			setState(404);
 			match(TYPE_ENUM);
-			setState(388);
+			setState(405);
 			match(T__6);
-			setState(389);
+			setState(406);
 			match(Identifier);
-			setState(394);
+			setState(411);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__7) {
 				{
 				{
-				setState(390);
+				setState(407);
 				match(T__7);
-				setState(391);
+				setState(408);
 				match(Identifier);
 				}
 				}
-				setState(396);
+				setState(413);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(397);
+			setState(414);
 			match(T__8);
 			}
 		}
@@ -3042,29 +3158,29 @@ public class RIIF2Parser extends Parser {
 
 	public final ItemContext item() throws RecognitionException {
 		ItemContext _localctx = new ItemContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_item);
+		enterRule(_localctx, 98, RULE_item);
 		try {
-			setState(402);
+			setState(419);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,28,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(399);
+				setState(416);
 				arrayInitializer();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(400);
+				setState(417);
 				listInitializer();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(401);
+				setState(418);
 				expression(0);
 				}
 				break;
@@ -3104,11 +3220,11 @@ public class RIIF2Parser extends Parser {
 
 	public final ChildComponentDeclaratorTypeContext childComponentDeclaratorType() throws RecognitionException {
 		ChildComponentDeclaratorTypeContext _localctx = new ChildComponentDeclaratorTypeContext(_ctx, getState());
-		enterRule(_localctx, 96, RULE_childComponentDeclaratorType);
+		enterRule(_localctx, 100, RULE_childComponentDeclaratorType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(404);
+			setState(421);
 			match(Identifier);
 			}
 		}
@@ -3151,19 +3267,19 @@ public class RIIF2Parser extends Parser {
 
 	public final VectorContext vector() throws RecognitionException {
 		VectorContext _localctx = new VectorContext(_ctx, getState());
-		enterRule(_localctx, 98, RULE_vector);
+		enterRule(_localctx, 102, RULE_vector);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(406);
+			setState(423);
 			match(T__9);
-			setState(407);
+			setState(424);
 			expression(0);
-			setState(408);
+			setState(425);
 			match(T__3);
-			setState(409);
+			setState(426);
 			expression(0);
-			setState(410);
+			setState(427);
 			match(T__10);
 			}
 		}
@@ -3204,26 +3320,26 @@ public class RIIF2Parser extends Parser {
 
 	public final IdentifierListContext identifierList() throws RecognitionException {
 		IdentifierListContext _localctx = new IdentifierListContext(_ctx, getState());
-		enterRule(_localctx, 100, RULE_identifierList);
+		enterRule(_localctx, 104, RULE_identifierList);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(412);
+			setState(429);
 			match(Identifier);
-			setState(417);
+			setState(434);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__7) {
 				{
 				{
-				setState(413);
+				setState(430);
 				match(T__7);
-				setState(414);
+				setState(431);
 				match(Identifier);
 				}
 				}
-				setState(419);
+				setState(436);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -3265,11 +3381,11 @@ public class RIIF2Parser extends Parser {
 
 	public final ExtendsListContext extendsList() throws RecognitionException {
 		ExtendsListContext _localctx = new ExtendsListContext(_ctx, getState());
-		enterRule(_localctx, 102, RULE_extendsList);
+		enterRule(_localctx, 106, RULE_extendsList);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(420);
+			setState(437);
 			identifierList();
 			}
 		}
@@ -3309,11 +3425,11 @@ public class RIIF2Parser extends Parser {
 
 	public final ImplementsListContext implementsList() throws RecognitionException {
 		ImplementsListContext _localctx = new ImplementsListContext(_ctx, getState());
-		enterRule(_localctx, 104, RULE_implementsList);
+		enterRule(_localctx, 108, RULE_implementsList);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(422);
+			setState(439);
 			identifierList();
 			}
 		}
@@ -3366,14 +3482,14 @@ public class RIIF2Parser extends Parser {
 		int _parentState = getState();
 		ExpressionContext _localctx = new ExpressionContext(_ctx, _parentState);
 		ExpressionContext _prevctx = _localctx;
-		int _startState = 106;
-		enterRecursionRule(_localctx, 106, RULE_expression, _p);
+		int _startState = 110;
+		enterRecursionRule(_localctx, 110, RULE_expression, _p);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(430);
+			setState(447);
 			switch (_input.LA(1)) {
 			case T__9:
 			case T__42:
@@ -3387,35 +3503,35 @@ public class RIIF2Parser extends Parser {
 			case FloatingPointLiteral:
 			case DecimalLiteral:
 				{
-				setState(425);
+				setState(442);
 				primary();
 				}
 				break;
 			case T__14:
 			case T__15:
 				{
-				setState(426);
+				setState(443);
 				_la = _input.LA(1);
 				if ( !(_la==T__14 || _la==T__15) ) {
 				_errHandler.recoverInline(this);
 				} else {
 					consume();
 				}
-				setState(427);
+				setState(444);
 				expression(14);
 				}
 				break;
 			case T__16:
 			case T__17:
 				{
-				setState(428);
+				setState(445);
 				_la = _input.LA(1);
 				if ( !(_la==T__16 || _la==T__17) ) {
 				_errHandler.recoverInline(this);
 				} else {
 					consume();
 				}
-				setState(429);
+				setState(446);
 				expression(13);
 				}
 				break;
@@ -3423,31 +3539,31 @@ public class RIIF2Parser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(481);
+			setState(498);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,32,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,33,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(479);
+					setState(496);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,31,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,32,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(432);
+						setState(449);
 						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
-						setState(433);
+						setState(450);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__18) | (1L << T__19) | (1L << T__20))) != 0)) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(434);
+						setState(451);
 						expression(13);
 						}
 						break;
@@ -3455,16 +3571,16 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(435);
+						setState(452);
 						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
-						setState(436);
+						setState(453);
 						_la = _input.LA(1);
 						if ( !(_la==T__14 || _la==T__15) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(437);
+						setState(454);
 						expression(12);
 						}
 						break;
@@ -3472,39 +3588,39 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(438);
+						setState(455);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(446);
+						setState(463);
 						_errHandler.sync(this);
-						switch ( getInterpreter().adaptivePredict(_input,30,_ctx) ) {
+						switch ( getInterpreter().adaptivePredict(_input,31,_ctx) ) {
 						case 1:
 							{
-							setState(439);
+							setState(456);
 							match(T__1);
-							setState(440);
+							setState(457);
 							match(T__1);
 							}
 							break;
 						case 2:
 							{
-							setState(441);
+							setState(458);
 							match(T__2);
-							setState(442);
+							setState(459);
 							match(T__2);
-							setState(443);
+							setState(460);
 							match(T__2);
 							}
 							break;
 						case 3:
 							{
-							setState(444);
+							setState(461);
 							match(T__2);
-							setState(445);
+							setState(462);
 							match(T__2);
 							}
 							break;
 						}
-						setState(448);
+						setState(465);
 						expression(11);
 						}
 						break;
@@ -3512,16 +3628,16 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(449);
+						setState(466);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(450);
+						setState(467);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__21) | (1L << T__22))) != 0)) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(451);
+						setState(468);
 						expression(10);
 						}
 						break;
@@ -3529,16 +3645,16 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(452);
+						setState(469);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(453);
+						setState(470);
 						_la = _input.LA(1);
 						if ( !(_la==T__23 || _la==T__24) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(454);
+						setState(471);
 						expression(9);
 						}
 						break;
@@ -3546,11 +3662,11 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(455);
+						setState(472);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(456);
+						setState(473);
 						match(T__25);
-						setState(457);
+						setState(474);
 						expression(8);
 						}
 						break;
@@ -3558,11 +3674,11 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(458);
+						setState(475);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(459);
+						setState(476);
 						match(T__26);
-						setState(460);
+						setState(477);
 						expression(7);
 						}
 						break;
@@ -3570,11 +3686,11 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(461);
+						setState(478);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(462);
+						setState(479);
 						match(T__27);
-						setState(463);
+						setState(480);
 						expression(6);
 						}
 						break;
@@ -3582,11 +3698,11 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(464);
+						setState(481);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(465);
+						setState(482);
 						match(T__28);
-						setState(466);
+						setState(483);
 						expression(5);
 						}
 						break;
@@ -3594,11 +3710,11 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(467);
+						setState(484);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(468);
+						setState(485);
 						match(T__29);
-						setState(469);
+						setState(486);
 						expression(4);
 						}
 						break;
@@ -3606,15 +3722,15 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(470);
+						setState(487);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(471);
+						setState(488);
 						match(T__30);
-						setState(472);
+						setState(489);
 						expression(0);
-						setState(473);
+						setState(490);
 						match(T__3);
-						setState(474);
+						setState(491);
 						expression(3);
 						}
 						break;
@@ -3622,25 +3738,25 @@ public class RIIF2Parser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(476);
+						setState(493);
 						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-						setState(477);
+						setState(494);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__5) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40) | (1L << T__41))) != 0)) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(478);
+						setState(495);
 						expression(1);
 						}
 						break;
 					}
 					} 
 				}
-				setState(483);
+				setState(500);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,32,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,33,_ctx);
 			}
 			}
 		}
@@ -3694,61 +3810,61 @@ public class RIIF2Parser extends Parser {
 
 	public final PrimaryContext primary() throws RecognitionException {
 		PrimaryContext _localctx = new PrimaryContext(_ctx, getState());
-		enterRule(_localctx, 108, RULE_primary);
+		enterRule(_localctx, 112, RULE_primary);
 		try {
-			setState(494);
+			setState(511);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,33,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,34,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(484);
+				setState(501);
 				match(T__42);
-				setState(485);
+				setState(502);
 				expression(0);
-				setState(486);
+				setState(503);
 				match(T__43);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(488);
+				setState(505);
 				match(SELF);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(489);
+				setState(506);
 				match(Identifier);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(490);
+				setState(507);
 				assignmentDeclaratorId();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(491);
+				setState(508);
 				literal();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(492);
+				setState(509);
 				funcCall();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(493);
+				setState(510);
 				arrayInitializer();
 				}
 				break;
@@ -3790,12 +3906,12 @@ public class RIIF2Parser extends Parser {
 
 	public final LiteralContext literal() throws RecognitionException {
 		LiteralContext _localctx = new LiteralContext(_ctx, getState());
-		enterRule(_localctx, 110, RULE_literal);
+		enterRule(_localctx, 114, RULE_literal);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(496);
+			setState(513);
 			_la = _input.LA(1);
 			if ( !(((((_la - 78)) & ~0x3f) == 0 && ((1L << (_la - 78)) & ((1L << (StringLiteral - 78)) | (1L << (FloatingPointLiteral - 78)) | (1L << (DecimalLiteral - 78)))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -3846,29 +3962,29 @@ public class RIIF2Parser extends Parser {
 
 	public final FuncCallContext funcCall() throws RecognitionException {
 		FuncCallContext _localctx = new FuncCallContext(_ctx, getState());
-		enterRule(_localctx, 112, RULE_funcCall);
+		enterRule(_localctx, 116, RULE_funcCall);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(498);
+			setState(515);
 			funcName();
-			setState(499);
+			setState(516);
 			match(T__42);
-			setState(500);
+			setState(517);
 			funcArg();
-			setState(503);
+			setState(520);
 			_la = _input.LA(1);
 			if (_la==T__7) {
 				{
-				setState(501);
+				setState(518);
 				match(T__7);
-				setState(502);
+				setState(519);
 				funcArg();
 				}
 			}
 
-			setState(505);
+			setState(522);
 			match(T__43);
 			}
 		}
@@ -3909,12 +4025,12 @@ public class RIIF2Parser extends Parser {
 
 	public final FuncNameContext funcName() throws RecognitionException {
 		FuncNameContext _localctx = new FuncNameContext(_ctx, getState());
-		enterRule(_localctx, 114, RULE_funcName);
+		enterRule(_localctx, 118, RULE_funcName);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(507);
+			setState(524);
 			_la = _input.LA(1);
 			if ( !(((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (FUNC_AGG_SINGLE - 64)) | (1L << (FUNC_GT_N_FAIL - 64)) | (1L << (FUNC_LOG - 64)) | (1L << (FUNC_EXP - 64)))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -3965,26 +4081,26 @@ public class RIIF2Parser extends Parser {
 
 	public final FuncArgContext funcArg() throws RecognitionException {
 		FuncArgContext _localctx = new FuncArgContext(_ctx, getState());
-		enterRule(_localctx, 116, RULE_funcArg);
+		enterRule(_localctx, 120, RULE_funcArg);
 		try {
-			setState(513);
+			setState(530);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,35,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,36,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				{
-				setState(509);
+				setState(526);
 				assignmentDeclaratorId();
 				}
-				setState(510);
+				setState(527);
 				vector();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(512);
+				setState(529);
 				expression(0);
 				}
 				break;
@@ -4003,7 +4119,7 @@ public class RIIF2Parser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 53:
+		case 55:
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
 		}
 		return true;
@@ -4039,187 +4155,191 @@ public class RIIF2Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3U\u0206\4\2\t\2\4"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3U\u0217\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
 		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
 		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4"+
 		",\t,\4-\t-\4.\t.\4/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64\t"+
-		"\64\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t;\4<\t<\3\2\6"+
-		"\2z\n\2\r\2\16\2{\3\2\3\2\3\3\3\3\3\3\3\3\5\3\u0084\n\3\3\4\3\4\3\4\3"+
-		"\4\5\4\u008a\n\4\3\4\3\4\5\4\u008e\n\4\3\4\3\4\7\4\u0092\n\4\f\4\16\4"+
-		"\u0095\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\5\5\u009f\n\5\3\6\3\6\3\6"+
-		"\3\6\3\7\3\7\3\7\5\7\u00a8\n\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\n\3\n"+
-		"\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5"+
-		"\r\u00c4\n\r\3\r\3\r\7\r\u00c8\n\r\f\r\16\r\u00cb\13\r\3\r\3\r\3\16\3"+
-		"\16\3\16\3\16\5\16\u00d3\n\16\3\17\3\17\3\17\3\20\3\20\3\20\3\21\3\21"+
-		"\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\7\23\u00e8\n\23"+
-		"\f\23\16\23\u00eb\13\23\3\23\3\23\3\24\3\24\5\24\u00f1\n\24\3\25\3\25"+
-		"\3\25\3\25\3\25\3\25\3\25\5\25\u00fa\n\25\3\25\3\25\3\26\3\26\3\26\3\26"+
-		"\7\26\u0102\n\26\f\26\16\26\u0105\13\26\3\26\3\26\3\27\3\27\3\27\3\27"+
-		"\3\27\5\27\u010e\n\27\3\27\3\27\3\27\3\27\5\27\u0114\n\27\3\30\3\30\3"+
-		"\31\3\31\3\31\5\31\u011b\n\31\3\32\3\32\3\32\5\32\u0120\n\32\3\33\3\33"+
-		"\3\33\5\33\u0125\n\33\3\34\3\34\5\34\u0129\n\34\3\34\3\34\3\34\3\35\3"+
-		"\35\3\35\3\35\3\36\3\36\3\37\3\37\3 \3 \3!\3!\3!\3!\7!\u013c\n!\f!\16"+
-		"!\u013f\13!\3!\3!\3\"\3\"\3\"\3\"\7\"\u0147\n\"\f\"\16\"\u014a\13\"\3"+
-		"\"\3\"\3#\3#\3$\3$\3%\3%\3&\3&\3&\3&\3\'\3\'\3\'\3\'\3\'\3(\3(\5(\u015f"+
-		"\n(\3)\3)\3)\5)\u0164\n)\3*\3*\7*\u0168\n*\f*\16*\u016b\13*\3*\3*\3+\3"+
-		"+\3+\3+\3,\3,\3,\3,\3,\3,\3,\3,\3-\3-\3.\3.\3.\3.\3.\5.\u0182\n.\3/\3"+
-		"/\3\60\3\60\3\60\3\60\3\60\7\60\u018b\n\60\f\60\16\60\u018e\13\60\3\60"+
-		"\3\60\3\61\3\61\3\61\5\61\u0195\n\61\3\62\3\62\3\63\3\63\3\63\3\63\3\63"+
-		"\3\63\3\64\3\64\3\64\7\64\u01a2\n\64\f\64\16\64\u01a5\13\64\3\65\3\65"+
-		"\3\66\3\66\3\67\3\67\3\67\3\67\3\67\3\67\5\67\u01b1\n\67\3\67\3\67\3\67"+
-		"\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\5\67\u01c1\n\67"+
-		"\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67"+
-		"\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67\3\67"+
-		"\3\67\3\67\3\67\7\67\u01e2\n\67\f\67\16\67\u01e5\13\67\38\38\38\38\38"+
-		"\38\38\38\38\38\58\u01f1\n8\39\39\3:\3:\3:\3:\3:\5:\u01fa\n:\3:\3:\3;"+
-		"\3;\3<\3<\3<\3<\5<\u0204\n<\3<\2\3l=\2\4\6\b\n\f\16\20\22\24\26\30\32"+
-		"\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtv\2\16\3\2"+
-		"\4\5\3\2:;\4\2\20\20OO\3\2<=\3\2\21\22\3\2\23\24\3\2\25\27\4\2\4\5\30"+
-		"\31\3\2\32\33\4\2\b\b\",\3\2PR\3\2BE\u020f\2y\3\2\2\2\4\u0083\3\2\2\2"+
-		"\6\u0085\3\2\2\2\b\u009e\3\2\2\2\n\u00a0\3\2\2\2\f\u00a7\3\2\2\2\16\u00a9"+
-		"\3\2\2\2\20\u00ad\3\2\2\2\22\u00b1\3\2\2\2\24\u00b5\3\2\2\2\26\u00b9\3"+
-		"\2\2\2\30\u00bf\3\2\2\2\32\u00d2\3\2\2\2\34\u00d4\3\2\2\2\36\u00d7\3\2"+
-		"\2\2 \u00da\3\2\2\2\"\u00df\3\2\2\2$\u00e3\3\2\2\2&\u00f0\3\2\2\2(\u00f2"+
-		"\3\2\2\2*\u00fd\3\2\2\2,\u0108\3\2\2\2.\u0115\3\2\2\2\60\u0117\3\2\2\2"+
-		"\62\u011c\3\2\2\2\64\u0124\3\2\2\2\66\u0126\3\2\2\28\u012d\3\2\2\2:\u0131"+
-		"\3\2\2\2<\u0133\3\2\2\2>\u0135\3\2\2\2@\u0137\3\2\2\2B\u0142\3\2\2\2D"+
-		"\u014d\3\2\2\2F\u014f\3\2\2\2H\u0151\3\2\2\2J\u0153\3\2\2\2L\u0157\3\2"+
-		"\2\2N\u015e\3\2\2\2P\u0163\3\2\2\2R\u0169\3\2\2\2T\u016e\3\2\2\2V\u0172"+
-		"\3\2\2\2X\u017a\3\2\2\2Z\u0181\3\2\2\2\\\u0183\3\2\2\2^\u0185\3\2\2\2"+
-		"`\u0194\3\2\2\2b\u0196\3\2\2\2d\u0198\3\2\2\2f\u019e\3\2\2\2h\u01a6\3"+
-		"\2\2\2j\u01a8\3\2\2\2l\u01b0\3\2\2\2n\u01f0\3\2\2\2p\u01f2\3\2\2\2r\u01f4"+
-		"\3\2\2\2t\u01fd\3\2\2\2v\u0203\3\2\2\2xz\5\4\3\2yx\3\2\2\2z{\3\2\2\2{"+
-		"y\3\2\2\2{|\3\2\2\2|}\3\2\2\2}~\7\2\2\3~\3\3\2\2\2\177\u0084\5\6\4\2\u0080"+
-		"\u0084\5\30\r\2\u0081\u0084\5$\23\2\u0082\u0084\5*\26\2\u0083\177\3\2"+
-		"\2\2\u0083\u0080\3\2\2\2\u0083\u0081\3\2\2\2\u0083\u0082\3\2\2\2\u0084"+
-		"\5\3\2\2\2\u0085\u0086\7/\2\2\u0086\u0089\7O\2\2\u0087\u0088\7\67\2\2"+
-		"\u0088\u008a\5h\65\2\u0089\u0087\3\2\2\2\u0089\u008a\3\2\2\2\u008a\u008d"+
-		"\3\2\2\2\u008b\u008c\7J\2\2\u008c\u008e\5j\66\2\u008d\u008b\3\2\2\2\u008d"+
-		"\u008e\3\2\2\2\u008e\u008f\3\2\2\2\u008f\u0093\7\3\2\2\u0090\u0092\5\b"+
-		"\5\2\u0091\u0090\3\2\2\2\u0092\u0095\3\2\2\2\u0093\u0091\3\2\2\2\u0093"+
-		"\u0094\3\2\2\2\u0094\u0096\3\2\2\2\u0095\u0093\3\2\2\2\u0096\u0097\7\60"+
-		"\2\2\u0097\7\3\2\2\2\u0098\u009f\5\n\6\2\u0099\u009f\5\16\b\2\u009a\u009f"+
-		"\5\20\t\2\u009b\u009f\5\22\n\2\u009c\u009f\5\24\13\2\u009d\u009f\5\26"+
-		"\f\2\u009e\u0098\3\2\2\2\u009e\u0099\3\2\2\2\u009e\u009a\3\2\2\2\u009e"+
-		"\u009b\3\2\2\2\u009e\u009c\3\2\2\2\u009e\u009d\3\2\2\2\u009f\t\3\2\2\2"+
-		"\u00a0\u00a1\5\\/\2\u00a1\u00a2\5\f\7\2\u00a2\u00a3\7\3\2\2\u00a3\13\3"+
-		"\2\2\2\u00a4\u00a8\5,\27\2\u00a5\u00a8\5.\30\2\u00a6\u00a8\5\60\31\2\u00a7"+
-		"\u00a4\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a7\u00a6\3\2\2\2\u00a8\r\3\2\2\2"+
-		"\u00a9\u00aa\7\65\2\2\u00aa\u00ab\5\62\32\2\u00ab\u00ac\7\3\2\2\u00ac"+
-		"\17\3\2\2\2\u00ad\u00ae\7\66\2\2\u00ae\u00af\5\64\33\2\u00af\u00b0\7\3"+
-		"\2\2\u00b0\21\3\2\2\2\u00b1\u00b2\78\2\2\u00b2\u00b3\5\66\34\2\u00b3\u00b4"+
-		"\7\3\2\2\u00b4\23\3\2\2\2\u00b5\u00b6\7L\2\2\u00b6\u00b7\5\66\34\2\u00b7"+
-		"\u00b8\7\3\2\2\u00b8\25\3\2\2\2\u00b9\u00ba\79\2\2\u00ba\u00bb\5T+\2\u00bb"+
-		"\u00bc\t\2\2\2\u00bc\u00bd\5l\67\2\u00bd\u00be\7\3\2\2\u00be\27\3\2\2"+
-		"\2\u00bf\u00c0\7F\2\2\u00c0\u00c3\7O\2\2\u00c1\u00c2\7\67\2\2\u00c2\u00c4"+
-		"\7O\2\2\u00c3\u00c1\3\2\2\2\u00c3\u00c4\3\2\2\2\u00c4\u00c5\3\2\2\2\u00c5"+
-		"\u00c9\7\3\2\2\u00c6\u00c8\5\32\16\2\u00c7\u00c6\3\2\2\2\u00c8\u00cb\3"+
-		"\2\2\2\u00c9\u00c7\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca\u00cc\3\2\2\2\u00cb"+
-		"\u00c9\3\2\2\2\u00cc\u00cd\7G\2\2\u00cd\31\3\2\2\2\u00ce\u00d3\5\34\17"+
-		"\2\u00cf\u00d3\5\36\20\2\u00d0\u00d3\5 \21\2\u00d1\u00d3\5\"\22\2\u00d2"+
-		"\u00ce\3\2\2\2\u00d2\u00cf\3\2\2\2\u00d2\u00d0\3\2\2\2\u00d2\u00d1\3\2"+
-		"\2\2\u00d3\33\3\2\2\2\u00d4\u00d5\7I\2\2\u00d5\u00d6\5\n\6\2\u00d6\35"+
-		"\3\2\2\2\u00d7\u00d8\7I\2\2\u00d8\u00d9\5\20\t\2\u00d9\37\3\2\2\2\u00da"+
-		"\u00db\7I\2\2\u00db\u00dc\7N\2\2\u00dc\u00dd\7O\2\2\u00dd\u00de\7\3\2"+
-		"\2\u00de!\3\2\2\2\u00df\u00e0\7H\2\2\u00e0\u00e1\58\35\2\u00e1\u00e2\7"+
-		"\3\2\2\u00e2#\3\2\2\2\u00e3\u00e4\7\61\2\2\u00e4\u00e5\7O\2\2\u00e5\u00e9"+
-		"\7\3\2\2\u00e6\u00e8\5&\24\2\u00e7\u00e6\3\2\2\2\u00e8\u00eb\3\2\2\2\u00e9"+
-		"\u00e7\3\2\2\2\u00e9\u00ea\3\2\2\2\u00ea\u00ec\3\2\2\2\u00eb\u00e9\3\2"+
-		"\2\2\u00ec\u00ed\7\62\2\2\u00ed%\3\2\2\2\u00ee\u00f1\5\22\n\2\u00ef\u00f1"+
-		"\5(\25\2\u00f0\u00ee\3\2\2\2\u00f0\u00ef\3\2\2\2\u00f1\'\3\2\2\2\u00f2"+
-		"\u00f3\t\3\2\2\u00f3\u00f4\7<\2\2\u00f4\u00f5\5N(\2\u00f5\u00f6\7\6\2"+
-		"\2\u00f6\u00f9\5Z.\2\u00f7\u00f8\7\7\2\2\u00f8\u00fa\5l\67\2\u00f9\u00f7"+
-		"\3\2\2\2\u00f9\u00fa\3\2\2\2\u00fa\u00fb\3\2\2\2\u00fb\u00fc\7\3\2\2\u00fc"+
-		")\3\2\2\2\u00fd\u00fe\7\63\2\2\u00fe\u00ff\7O\2\2\u00ff\u0103\7\3\2\2"+
-		"\u0100\u0102\5\26\f\2\u0101\u0100\3\2\2\2\u0102\u0105\3\2\2\2\u0103\u0101"+
-		"\3\2\2\2\u0103\u0104\3\2\2\2\u0104\u0106\3\2\2\2\u0105\u0103\3\2\2\2\u0106"+
-		"\u0107\7\64\2\2\u0107+\3\2\2\2\u0108\u0113\5H%\2\u0109\u010a\7\6\2\2\u010a"+
-		"\u010d\5Z.\2\u010b\u010c\7\7\2\2\u010c\u010e\5:\36\2\u010d\u010b\3\2\2"+
-		"\2\u010d\u010e\3\2\2\2\u010e\u0114\3\2\2\2\u010f\u0110\7\6\2\2\u0110\u0114"+
-		"\7M\2\2\u0111\u0112\7\7\2\2\u0112\u0114\5@!\2\u0113\u0109\3\2\2\2\u0113"+
-		"\u010f\3\2\2\2\u0113\u0111\3\2\2\2\u0114-\3\2\2\2\u0115\u0116\5J&\2\u0116"+
-		"/\3\2\2\2\u0117\u011a\5L\'\2\u0118\u0119\7\7\2\2\u0119\u011b\5> \2\u011a"+
-		"\u0118\3\2\2\2\u011a\u011b\3\2\2\2\u011b\61\3\2\2\2\u011c\u011d\5b\62"+
-		"\2\u011d\u011f\5F$\2\u011e\u0120\5d\63\2\u011f\u011e\3\2\2\2\u011f\u0120"+
-		"\3\2\2\2\u0120\63\3\2\2\2\u0121\u0125\5H%\2\u0122\u0125\5J&\2\u0123\u0125"+
-		"\5L\'\2\u0124\u0121\3\2\2\2\u0124\u0122\3\2\2\2\u0124\u0123\3\2\2\2\u0125"+
-		"\65\3\2\2\2\u0126\u0128\5P)\2\u0127\u0129\5d\63\2\u0128\u0127\3\2\2\2"+
-		"\u0128\u0129\3\2\2\2\u0129\u012a\3\2\2\2\u012a\u012b\7\b\2\2\u012b\u012c"+
-		"\5D#\2\u012c\67\3\2\2\2\u012d\u012e\5X-\2\u012e\u012f\7\b\2\2\u012f\u0130"+
-		"\5<\37\2\u01309\3\2\2\2\u0131\u0132\5l\67\2\u0132;\3\2\2\2\u0133\u0134"+
-		"\5D#\2\u0134=\3\2\2\2\u0135\u0136\5D#\2\u0136?\3\2\2\2\u0137\u0138\7\t"+
-		"\2\2\u0138\u013d\5`\61\2\u0139\u013a\7\n\2\2\u013a\u013c\5`\61\2\u013b"+
-		"\u0139\3\2\2\2\u013c\u013f\3\2\2\2\u013d\u013b\3\2\2\2\u013d\u013e\3\2"+
-		"\2\2\u013e\u0140\3\2\2\2\u013f\u013d\3\2\2\2\u0140\u0141\7\13\2\2\u0141"+
-		"A\3\2\2\2\u0142\u0143\7\f\2\2\u0143\u0148\5`\61\2\u0144\u0145\7\n\2\2"+
-		"\u0145\u0147\5`\61\2\u0146\u0144\3\2\2\2\u0147\u014a\3\2\2\2\u0148\u0146"+
-		"\3\2\2\2\u0148\u0149\3\2\2\2\u0149\u014b\3\2\2\2\u014a\u0148\3\2\2\2\u014b"+
-		"\u014c\7\r\2\2\u014cC\3\2\2\2\u014d\u014e\5`\61\2\u014eE\3\2\2\2\u014f"+
-		"\u0150\7O\2\2\u0150G\3\2\2\2\u0151\u0152\7O\2\2\u0152I\3\2\2\2\u0153\u0154"+
-		"\7O\2\2\u0154\u0155\7\f\2\2\u0155\u0156\7\r\2\2\u0156K\3\2\2\2\u0157\u0158"+
-		"\7O\2\2\u0158\u0159\7\f\2\2\u0159\u015a\7O\2\2\u015a\u015b\7\r\2\2\u015b"+
-		"M\3\2\2\2\u015c\u015f\5H%\2\u015d\u015f\5L\'\2\u015e\u015c\3\2\2\2\u015e"+
-		"\u015d\3\2\2\2\u015fO\3\2\2\2\u0160\u0164\5R*\2\u0161\u0164\5T+\2\u0162"+
-		"\u0164\5V,\2\u0163\u0160\3\2\2\2\u0163\u0161\3\2\2\2\u0163\u0162\3\2\2"+
-		"\2\u0164Q\3\2\2\2\u0165\u0166\7O\2\2\u0166\u0168\7\16\2\2\u0167\u0165"+
-		"\3\2\2\2\u0168\u016b\3\2\2\2\u0169\u0167\3\2\2\2\u0169\u016a\3\2\2\2\u016a"+
-		"\u016c\3\2\2\2\u016b\u0169\3\2\2\2\u016c\u016d\5N(\2\u016dS\3\2\2\2\u016e"+
-		"\u016f\5R*\2\u016f\u0170\7\17\2\2\u0170\u0171\7O\2\2\u0171U\3\2\2\2\u0172"+
-		"\u0173\5T+\2\u0173\u0174\7\f\2\2\u0174\u0175\t\4\2\2\u0175\u0176\7\r\2"+
-		"\2\u0176\u0177\7\f\2\2\u0177\u0178\7O\2\2\u0178\u0179\7\r\2\2\u0179W\3"+
-		"\2\2\2\u017a\u017b\5P)\2\u017bY\3\2\2\2\u017c\u0182\7>\2\2\u017d\u0182"+
-		"\7?\2\2\u017e\u0182\7@\2\2\u017f\u0182\7O\2\2\u0180\u0182\5^\60\2\u0181"+
-		"\u017c\3\2\2\2\u0181\u017d\3\2\2\2\u0181\u017e\3\2\2\2\u0181\u017f\3\2"+
-		"\2\2\u0181\u0180\3\2\2\2\u0182[\3\2\2\2\u0183\u0184\t\5\2\2\u0184]\3\2"+
-		"\2\2\u0185\u0186\7A\2\2\u0186\u0187\7\t\2\2\u0187\u018c\7O\2\2\u0188\u0189"+
-		"\7\n\2\2\u0189\u018b\7O\2\2\u018a\u0188\3\2\2\2\u018b\u018e\3\2\2\2\u018c"+
-		"\u018a\3\2\2\2\u018c\u018d\3\2\2\2\u018d\u018f\3\2\2\2\u018e\u018c\3\2"+
-		"\2\2\u018f\u0190\7\13\2\2\u0190_\3\2\2\2\u0191\u0195\5B\"\2\u0192\u0195"+
-		"\5@!\2\u0193\u0195\5l\67\2\u0194\u0191\3\2\2\2\u0194\u0192\3\2\2\2\u0194"+
-		"\u0193\3\2\2\2\u0195a\3\2\2\2\u0196\u0197\7O\2\2\u0197c\3\2\2\2\u0198"+
-		"\u0199\7\f\2\2\u0199\u019a\5l\67\2\u019a\u019b\7\6\2\2\u019b\u019c\5l"+
-		"\67\2\u019c\u019d\7\r\2\2\u019de\3\2\2\2\u019e\u01a3\7O\2\2\u019f\u01a0"+
-		"\7\n\2\2\u01a0\u01a2\7O\2\2\u01a1\u019f\3\2\2\2\u01a2\u01a5\3\2\2\2\u01a3"+
-		"\u01a1\3\2\2\2\u01a3\u01a4\3\2\2\2\u01a4g\3\2\2\2\u01a5\u01a3\3\2\2\2"+
-		"\u01a6\u01a7\5f\64\2\u01a7i\3\2\2\2\u01a8\u01a9\5f\64\2\u01a9k\3\2\2\2"+
-		"\u01aa\u01ab\b\67\1\2\u01ab\u01b1\5n8\2\u01ac\u01ad\t\6\2\2\u01ad\u01b1"+
-		"\5l\67\20\u01ae\u01af\t\7\2\2\u01af\u01b1\5l\67\17\u01b0\u01aa\3\2\2\2"+
-		"\u01b0\u01ac\3\2\2\2\u01b0\u01ae\3\2\2\2\u01b1\u01e3\3\2\2\2\u01b2\u01b3"+
-		"\f\16\2\2\u01b3\u01b4\t\b\2\2\u01b4\u01e2\5l\67\17\u01b5\u01b6\f\r\2\2"+
-		"\u01b6\u01b7\t\6\2\2\u01b7\u01e2\5l\67\16\u01b8\u01c0\f\f\2\2\u01b9\u01ba"+
-		"\7\4\2\2\u01ba\u01c1\7\4\2\2\u01bb\u01bc\7\5\2\2\u01bc\u01bd\7\5\2\2\u01bd"+
-		"\u01c1\7\5\2\2\u01be\u01bf\7\5\2\2\u01bf\u01c1\7\5\2\2\u01c0\u01b9\3\2"+
-		"\2\2\u01c0\u01bb\3\2\2\2\u01c0\u01be\3\2\2\2\u01c1\u01c2\3\2\2\2\u01c2"+
-		"\u01e2\5l\67\r\u01c3\u01c4\f\13\2\2\u01c4\u01c5\t\t\2\2\u01c5\u01e2\5"+
-		"l\67\f\u01c6\u01c7\f\n\2\2\u01c7\u01c8\t\n\2\2\u01c8\u01e2\5l\67\13\u01c9"+
-		"\u01ca\f\t\2\2\u01ca\u01cb\7\34\2\2\u01cb\u01e2\5l\67\n\u01cc\u01cd\f"+
-		"\b\2\2\u01cd\u01ce\7\35\2\2\u01ce\u01e2\5l\67\t\u01cf\u01d0\f\7\2\2\u01d0"+
-		"\u01d1\7\36\2\2\u01d1\u01e2\5l\67\b\u01d2\u01d3\f\6\2\2\u01d3\u01d4\7"+
-		"\37\2\2\u01d4\u01e2\5l\67\7\u01d5\u01d6\f\5\2\2\u01d6\u01d7\7 \2\2\u01d7"+
-		"\u01e2\5l\67\6\u01d8\u01d9\f\4\2\2\u01d9\u01da\7!\2\2\u01da\u01db\5l\67"+
-		"\2\u01db\u01dc\7\6\2\2\u01dc\u01dd\5l\67\5\u01dd\u01e2\3\2\2\2\u01de\u01df"+
-		"\f\3\2\2\u01df\u01e0\t\13\2\2\u01e0\u01e2\5l\67\3\u01e1\u01b2\3\2\2\2"+
-		"\u01e1\u01b5\3\2\2\2\u01e1\u01b8\3\2\2\2\u01e1\u01c3\3\2\2\2\u01e1\u01c6"+
-		"\3\2\2\2\u01e1\u01c9\3\2\2\2\u01e1\u01cc\3\2\2\2\u01e1\u01cf\3\2\2\2\u01e1"+
-		"\u01d2\3\2\2\2\u01e1\u01d5\3\2\2\2\u01e1\u01d8\3\2\2\2\u01e1\u01de\3\2"+
-		"\2\2\u01e2\u01e5\3\2\2\2\u01e3\u01e1\3\2\2\2\u01e3\u01e4\3\2\2\2\u01e4"+
-		"m\3\2\2\2\u01e5\u01e3\3\2\2\2\u01e6\u01e7\7-\2\2\u01e7\u01e8\5l\67\2\u01e8"+
-		"\u01e9\7.\2\2\u01e9\u01f1\3\2\2\2\u01ea\u01f1\7K\2\2\u01eb\u01f1\7O\2"+
-		"\2\u01ec\u01f1\5P)\2\u01ed\u01f1\5p9\2\u01ee\u01f1\5r:\2\u01ef\u01f1\5"+
-		"B\"\2\u01f0\u01e6\3\2\2\2\u01f0\u01ea\3\2\2\2\u01f0\u01eb\3\2\2\2\u01f0"+
-		"\u01ec\3\2\2\2\u01f0\u01ed\3\2\2\2\u01f0\u01ee\3\2\2\2\u01f0\u01ef\3\2"+
-		"\2\2\u01f1o\3\2\2\2\u01f2\u01f3\t\f\2\2\u01f3q\3\2\2\2\u01f4\u01f5\5t"+
-		";\2\u01f5\u01f6\7-\2\2\u01f6\u01f9\5v<\2\u01f7\u01f8\7\n\2\2\u01f8\u01fa"+
-		"\5v<\2\u01f9\u01f7\3\2\2\2\u01f9\u01fa\3\2\2\2\u01fa\u01fb\3\2\2\2\u01fb"+
-		"\u01fc\7.\2\2\u01fcs\3\2\2\2\u01fd\u01fe\t\r\2\2\u01feu\3\2\2\2\u01ff"+
-		"\u0200\5P)\2\u0200\u0201\5d\63\2\u0201\u0204\3\2\2\2\u0202\u0204\5l\67"+
-		"\2\u0203\u01ff\3\2\2\2\u0203\u0202\3\2\2\2\u0204w\3\2\2\2&{\u0083\u0089"+
-		"\u008d\u0093\u009e\u00a7\u00c3\u00c9\u00d2\u00e9\u00f0\u00f9\u0103\u010d"+
-		"\u0113\u011a\u011f\u0124\u0128\u013d\u0148\u015e\u0163\u0169\u0181\u018c"+
-		"\u0194\u01a3\u01b0\u01c0\u01e1\u01e3\u01f0\u01f9\u0203";
+		"\64\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t;\4<\t<\4=\t="+
+		"\4>\t>\3\2\6\2~\n\2\r\2\16\2\177\3\2\3\2\3\3\3\3\3\3\3\3\5\3\u0088\n\3"+
+		"\3\4\3\4\3\4\3\4\5\4\u008e\n\4\3\4\3\4\5\4\u0092\n\4\3\4\3\4\7\4\u0096"+
+		"\n\4\f\4\16\4\u0099\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\5\5\u00a3\n\5"+
+		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\u00af\n\6\3\7\3\7\5\7\u00b3"+
+		"\n\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3"+
+		"\13\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5\r\u00cf\n\r\3\r\3\r\7\r"+
+		"\u00d3\n\r\f\r\16\r\u00d6\13\r\3\r\3\r\3\16\3\16\3\16\3\16\5\16\u00de"+
+		"\n\16\3\17\3\17\3\17\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\3\22\3\22"+
+		"\3\22\3\22\3\23\3\23\3\23\3\23\7\23\u00f3\n\23\f\23\16\23\u00f6\13\23"+
+		"\3\23\3\23\3\24\3\24\5\24\u00fc\n\24\3\25\3\25\3\25\3\25\3\25\3\25\3\25"+
+		"\5\25\u0105\n\25\3\25\3\25\3\26\3\26\3\26\3\26\7\26\u010d\n\26\f\26\16"+
+		"\26\u0110\13\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\5\27\u0119\n\27\3\27"+
+		"\3\27\3\27\3\27\5\27\u011f\n\27\3\30\3\30\3\31\3\31\3\31\5\31\u0126\n"+
+		"\31\3\32\3\32\3\32\5\32\u012b\n\32\3\33\3\33\3\33\5\33\u0130\n\33\3\34"+
+		"\3\34\5\34\u0134\n\34\3\34\3\34\3\34\3\35\3\35\3\35\3\35\3\36\3\36\3\37"+
+		"\3\37\3 \3 \3!\3!\3\"\3\"\3\"\3\"\7\"\u0149\n\"\f\"\16\"\u014c\13\"\3"+
+		"\"\3\"\3#\3#\3#\3#\7#\u0154\n#\f#\16#\u0157\13#\3#\3#\3$\3$\3%\3%\3&\3"+
+		"&\3\'\3\'\3\'\3\'\3(\3(\3(\3(\3(\3)\3)\3)\3)\3*\3*\5*\u0170\n*\3+\3+\3"+
+		"+\5+\u0175\n+\3,\3,\7,\u0179\n,\f,\16,\u017c\13,\3,\3,\3-\3-\3-\3-\3."+
+		"\3.\3.\3.\3.\3.\3.\3.\3/\3/\3\60\3\60\3\60\3\60\3\60\5\60\u0193\n\60\3"+
+		"\61\3\61\3\62\3\62\3\62\3\62\3\62\7\62\u019c\n\62\f\62\16\62\u019f\13"+
+		"\62\3\62\3\62\3\63\3\63\3\63\5\63\u01a6\n\63\3\64\3\64\3\65\3\65\3\65"+
+		"\3\65\3\65\3\65\3\66\3\66\3\66\7\66\u01b3\n\66\f\66\16\66\u01b6\13\66"+
+		"\3\67\3\67\38\38\39\39\39\39\39\39\59\u01c2\n9\39\39\39\39\39\39\39\3"+
+		"9\39\39\39\39\39\39\59\u01d2\n9\39\39\39\39\39\39\39\39\39\39\39\39\3"+
+		"9\39\39\39\39\39\39\39\39\39\39\39\39\39\39\39\39\39\39\79\u01f3\n9\f"+
+		"9\169\u01f6\139\3:\3:\3:\3:\3:\3:\3:\3:\3:\3:\5:\u0202\n:\3;\3;\3<\3<"+
+		"\3<\3<\3<\5<\u020b\n<\3<\3<\3=\3=\3>\3>\3>\3>\5>\u0215\n>\3>\2\3p?\2\4"+
+		"\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNP"+
+		"RTVXZ\\^`bdfhjlnprtvxz\2\16\3\2\4\5\3\2:;\4\2\20\20OO\3\2<=\3\2\21\22"+
+		"\3\2\23\24\3\2\25\27\4\2\4\5\30\31\3\2\32\33\4\2\b\b\",\3\2PR\3\2BE\u021f"+
+		"\2}\3\2\2\2\4\u0087\3\2\2\2\6\u0089\3\2\2\2\b\u00a2\3\2\2\2\n\u00ae\3"+
+		"\2\2\2\f\u00b2\3\2\2\2\16\u00b4\3\2\2\2\20\u00b8\3\2\2\2\22\u00bc\3\2"+
+		"\2\2\24\u00c0\3\2\2\2\26\u00c4\3\2\2\2\30\u00ca\3\2\2\2\32\u00dd\3\2\2"+
+		"\2\34\u00df\3\2\2\2\36\u00e2\3\2\2\2 \u00e5\3\2\2\2\"\u00ea\3\2\2\2$\u00ee"+
+		"\3\2\2\2&\u00fb\3\2\2\2(\u00fd\3\2\2\2*\u0108\3\2\2\2,\u0113\3\2\2\2."+
+		"\u0120\3\2\2\2\60\u0122\3\2\2\2\62\u0127\3\2\2\2\64\u012f\3\2\2\2\66\u0131"+
+		"\3\2\2\28\u0138\3\2\2\2:\u013c\3\2\2\2<\u013e\3\2\2\2>\u0140\3\2\2\2@"+
+		"\u0142\3\2\2\2B\u0144\3\2\2\2D\u014f\3\2\2\2F\u015a\3\2\2\2H\u015c\3\2"+
+		"\2\2J\u015e\3\2\2\2L\u0160\3\2\2\2N\u0164\3\2\2\2P\u0169\3\2\2\2R\u016f"+
+		"\3\2\2\2T\u0174\3\2\2\2V\u017a\3\2\2\2X\u017f\3\2\2\2Z\u0183\3\2\2\2\\"+
+		"\u018b\3\2\2\2^\u0192\3\2\2\2`\u0194\3\2\2\2b\u0196\3\2\2\2d\u01a5\3\2"+
+		"\2\2f\u01a7\3\2\2\2h\u01a9\3\2\2\2j\u01af\3\2\2\2l\u01b7\3\2\2\2n\u01b9"+
+		"\3\2\2\2p\u01c1\3\2\2\2r\u0201\3\2\2\2t\u0203\3\2\2\2v\u0205\3\2\2\2x"+
+		"\u020e\3\2\2\2z\u0214\3\2\2\2|~\5\4\3\2}|\3\2\2\2~\177\3\2\2\2\177}\3"+
+		"\2\2\2\177\u0080\3\2\2\2\u0080\u0081\3\2\2\2\u0081\u0082\7\2\2\3\u0082"+
+		"\3\3\2\2\2\u0083\u0088\5\6\4\2\u0084\u0088\5\30\r\2\u0085\u0088\5$\23"+
+		"\2\u0086\u0088\5*\26\2\u0087\u0083\3\2\2\2\u0087\u0084\3\2\2\2\u0087\u0085"+
+		"\3\2\2\2\u0087\u0086\3\2\2\2\u0088\5\3\2\2\2\u0089\u008a\7/\2\2\u008a"+
+		"\u008d\7O\2\2\u008b\u008c\7\67\2\2\u008c\u008e\5l\67\2\u008d\u008b\3\2"+
+		"\2\2\u008d\u008e\3\2\2\2\u008e\u0091\3\2\2\2\u008f\u0090\7J\2\2\u0090"+
+		"\u0092\5n8\2\u0091\u008f\3\2\2\2\u0091\u0092\3\2\2\2\u0092\u0093\3\2\2"+
+		"\2\u0093\u0097\7\3\2\2\u0094\u0096\5\b\5\2\u0095\u0094\3\2\2\2\u0096\u0099"+
+		"\3\2\2\2\u0097\u0095\3\2\2\2\u0097\u0098\3\2\2\2\u0098\u009a\3\2\2\2\u0099"+
+		"\u0097\3\2\2\2\u009a\u009b\7\60\2\2\u009b\7\3\2\2\2\u009c\u00a3\5\n\6"+
+		"\2\u009d\u00a3\5\16\b\2\u009e\u00a3\5\20\t\2\u009f\u00a3\5\22\n\2\u00a0"+
+		"\u00a3\5\24\13\2\u00a1\u00a3\5\26\f\2\u00a2\u009c\3\2\2\2\u00a2\u009d"+
+		"\3\2\2\2\u00a2\u009e\3\2\2\2\u00a2\u009f\3\2\2\2\u00a2\u00a0\3\2\2\2\u00a2"+
+		"\u00a1\3\2\2\2\u00a3\t\3\2\2\2\u00a4\u00a5\5`\61\2\u00a5\u00a6\5\f\7\2"+
+		"\u00a6\u00a7\7\3\2\2\u00a7\u00af\3\2\2\2\u00a8\u00a9\5\60\31\2\u00a9\u00aa"+
+		"\7\3\2\2\u00aa\u00af\3\2\2\2\u00ab\u00ac\5:\36\2\u00ac\u00ad\7\3\2\2\u00ad"+
+		"\u00af\3\2\2\2\u00ae\u00a4\3\2\2\2\u00ae\u00a8\3\2\2\2\u00ae\u00ab\3\2"+
+		"\2\2\u00af\13\3\2\2\2\u00b0\u00b3\5,\27\2\u00b1\u00b3\5.\30\2\u00b2\u00b0"+
+		"\3\2\2\2\u00b2\u00b1\3\2\2\2\u00b3\r\3\2\2\2\u00b4\u00b5\7\65\2\2\u00b5"+
+		"\u00b6\5\62\32\2\u00b6\u00b7\7\3\2\2\u00b7\17\3\2\2\2\u00b8\u00b9\7\66"+
+		"\2\2\u00b9\u00ba\5\64\33\2\u00ba\u00bb\7\3\2\2\u00bb\21\3\2\2\2\u00bc"+
+		"\u00bd\78\2\2\u00bd\u00be\5\66\34\2\u00be\u00bf\7\3\2\2\u00bf\23\3\2\2"+
+		"\2\u00c0\u00c1\7L\2\2\u00c1\u00c2\5\66\34\2\u00c2\u00c3\7\3\2\2\u00c3"+
+		"\25\3\2\2\2\u00c4\u00c5\79\2\2\u00c5\u00c6\5X-\2\u00c6\u00c7\t\2\2\2\u00c7"+
+		"\u00c8\5p9\2\u00c8\u00c9\7\3\2\2\u00c9\27\3\2\2\2\u00ca\u00cb\7F\2\2\u00cb"+
+		"\u00ce\7O\2\2\u00cc\u00cd\7\67\2\2\u00cd\u00cf\7O\2\2\u00ce\u00cc\3\2"+
+		"\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0\3\2\2\2\u00d0\u00d4\7\3\2\2\u00d1"+
+		"\u00d3\5\32\16\2\u00d2\u00d1\3\2\2\2\u00d3\u00d6\3\2\2\2\u00d4\u00d2\3"+
+		"\2\2\2\u00d4\u00d5\3\2\2\2\u00d5\u00d7\3\2\2\2\u00d6\u00d4\3\2\2\2\u00d7"+
+		"\u00d8\7G\2\2\u00d8\31\3\2\2\2\u00d9\u00de\5\34\17\2\u00da\u00de\5\36"+
+		"\20\2\u00db\u00de\5 \21\2\u00dc\u00de\5\"\22\2\u00dd\u00d9\3\2\2\2\u00dd"+
+		"\u00da\3\2\2\2\u00dd\u00db\3\2\2\2\u00dd\u00dc\3\2\2\2\u00de\33\3\2\2"+
+		"\2\u00df\u00e0\7I\2\2\u00e0\u00e1\5\n\6\2\u00e1\35\3\2\2\2\u00e2\u00e3"+
+		"\7I\2\2\u00e3\u00e4\5\20\t\2\u00e4\37\3\2\2\2\u00e5\u00e6\7I\2\2\u00e6"+
+		"\u00e7\7N\2\2\u00e7\u00e8\7O\2\2\u00e8\u00e9\7\3\2\2\u00e9!\3\2\2\2\u00ea"+
+		"\u00eb\7H\2\2\u00eb\u00ec\58\35\2\u00ec\u00ed\7\3\2\2\u00ed#\3\2\2\2\u00ee"+
+		"\u00ef\7\61\2\2\u00ef\u00f0\7O\2\2\u00f0\u00f4\7\3\2\2\u00f1\u00f3\5&"+
+		"\24\2\u00f2\u00f1\3\2\2\2\u00f3\u00f6\3\2\2\2\u00f4\u00f2\3\2\2\2\u00f4"+
+		"\u00f5\3\2\2\2\u00f5\u00f7\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f7\u00f8\7\62"+
+		"\2\2\u00f8%\3\2\2\2\u00f9\u00fc\5\22\n\2\u00fa\u00fc\5(\25\2\u00fb\u00f9"+
+		"\3\2\2\2\u00fb\u00fa\3\2\2\2\u00fc\'\3\2\2\2\u00fd\u00fe\t\3\2\2\u00fe"+
+		"\u00ff\7<\2\2\u00ff\u0100\5R*\2\u0100\u0101\7\6\2\2\u0101\u0104\5^\60"+
+		"\2\u0102\u0103\7\7\2\2\u0103\u0105\5p9\2\u0104\u0102\3\2\2\2\u0104\u0105"+
+		"\3\2\2\2\u0105\u0106\3\2\2\2\u0106\u0107\7\3\2\2\u0107)\3\2\2\2\u0108"+
+		"\u0109\7\63\2\2\u0109\u010a\7O\2\2\u010a\u010e\7\3\2\2\u010b\u010d\5\26"+
+		"\f\2\u010c\u010b\3\2\2\2\u010d\u0110\3\2\2\2\u010e\u010c\3\2\2\2\u010e"+
+		"\u010f\3\2\2\2\u010f\u0111\3\2\2\2\u0110\u010e\3\2\2\2\u0111\u0112\7\64"+
+		"\2\2\u0112+\3\2\2\2\u0113\u011e\5J&\2\u0114\u0115\7\6\2\2\u0115\u0118"+
+		"\5^\60\2\u0116\u0117\7\7\2\2\u0117\u0119\5<\37\2\u0118\u0116\3\2\2\2\u0118"+
+		"\u0119\3\2\2\2\u0119\u011f\3\2\2\2\u011a\u011b\7\6\2\2\u011b\u011f\7M"+
+		"\2\2\u011c\u011d\7\7\2\2\u011d\u011f\5B\"\2\u011e\u0114\3\2\2\2\u011e"+
+		"\u011a\3\2\2\2\u011e\u011c\3\2\2\2\u011f-\3\2\2\2\u0120\u0121\5L\'\2\u0121"+
+		"/\3\2\2\2\u0122\u0125\5N(\2\u0123\u0124\7\7\2\2\u0124\u0126\5@!\2\u0125"+
+		"\u0123\3\2\2\2\u0125\u0126\3\2\2\2\u0126\61\3\2\2\2\u0127\u0128\5f\64"+
+		"\2\u0128\u012a\5H%\2\u0129\u012b\5h\65\2\u012a\u0129\3\2\2\2\u012a\u012b"+
+		"\3\2\2\2\u012b\63\3\2\2\2\u012c\u0130\5J&\2\u012d\u0130\5L\'\2\u012e\u0130"+
+		"\5N(\2\u012f\u012c\3\2\2\2\u012f\u012d\3\2\2\2\u012f\u012e\3\2\2\2\u0130"+
+		"\65\3\2\2\2\u0131\u0133\5T+\2\u0132\u0134\5h\65\2\u0133\u0132\3\2\2\2"+
+		"\u0133\u0134\3\2\2\2\u0134\u0135\3\2\2\2\u0135\u0136\7\b\2\2\u0136\u0137"+
+		"\5F$\2\u0137\67\3\2\2\2\u0138\u0139\5\\/\2\u0139\u013a\7\b\2\2\u013a\u013b"+
+		"\5> \2\u013b9\3\2\2\2\u013c\u013d\5P)\2\u013d;\3\2\2\2\u013e\u013f\5p"+
+		"9\2\u013f=\3\2\2\2\u0140\u0141\5F$\2\u0141?\3\2\2\2\u0142\u0143\5F$\2"+
+		"\u0143A\3\2\2\2\u0144\u0145\7\t\2\2\u0145\u014a\5d\63\2\u0146\u0147\7"+
+		"\n\2\2\u0147\u0149\5d\63\2\u0148\u0146\3\2\2\2\u0149\u014c\3\2\2\2\u014a"+
+		"\u0148\3\2\2\2\u014a\u014b\3\2\2\2\u014b\u014d\3\2\2\2\u014c\u014a\3\2"+
+		"\2\2\u014d\u014e\7\13\2\2\u014eC\3\2\2\2\u014f\u0150\7\f\2\2\u0150\u0155"+
+		"\5d\63\2\u0151\u0152\7\n\2\2\u0152\u0154\5d\63\2\u0153\u0151\3\2\2\2\u0154"+
+		"\u0157\3\2\2\2\u0155\u0153\3\2\2\2\u0155\u0156\3\2\2\2\u0156\u0158\3\2"+
+		"\2\2\u0157\u0155\3\2\2\2\u0158\u0159\7\r\2\2\u0159E\3\2\2\2\u015a\u015b"+
+		"\5d\63\2\u015bG\3\2\2\2\u015c\u015d\7O\2\2\u015dI\3\2\2\2\u015e\u015f"+
+		"\7O\2\2\u015fK\3\2\2\2\u0160\u0161\7O\2\2\u0161\u0162\7\f\2\2\u0162\u0163"+
+		"\7\r\2\2\u0163M\3\2\2\2\u0164\u0165\7O\2\2\u0165\u0166\7\f\2\2\u0166\u0167"+
+		"\7O\2\2\u0167\u0168\7\r\2\2\u0168O\3\2\2\2\u0169\u016a\5N(\2\u016a\u016b"+
+		"\7\16\2\2\u016b\u016c\7O\2\2\u016cQ\3\2\2\2\u016d\u0170\5J&\2\u016e\u0170"+
+		"\5N(\2\u016f\u016d\3\2\2\2\u016f\u016e\3\2\2\2\u0170S\3\2\2\2\u0171\u0175"+
+		"\5V,\2\u0172\u0175\5X-\2\u0173\u0175\5Z.\2\u0174\u0171\3\2\2\2\u0174\u0172"+
+		"\3\2\2\2\u0174\u0173\3\2\2\2\u0175U\3\2\2\2\u0176\u0177\7O\2\2\u0177\u0179"+
+		"\7\17\2\2\u0178\u0176\3\2\2\2\u0179\u017c\3\2\2\2\u017a\u0178\3\2\2\2"+
+		"\u017a\u017b\3\2\2\2\u017b\u017d\3\2\2\2\u017c\u017a\3\2\2\2\u017d\u017e"+
+		"\5R*\2\u017eW\3\2\2\2\u017f\u0180\5V,\2\u0180\u0181\7\16\2\2\u0181\u0182"+
+		"\7O\2\2\u0182Y\3\2\2\2\u0183\u0184\5X-\2\u0184\u0185\7\f\2\2\u0185\u0186"+
+		"\t\4\2\2\u0186\u0187\7\r\2\2\u0187\u0188\7\f\2\2\u0188\u0189\7O\2\2\u0189"+
+		"\u018a\7\r\2\2\u018a[\3\2\2\2\u018b\u018c\5T+\2\u018c]\3\2\2\2\u018d\u0193"+
+		"\7>\2\2\u018e\u0193\7?\2\2\u018f\u0193\7@\2\2\u0190\u0193\7O\2\2\u0191"+
+		"\u0193\5b\62\2\u0192\u018d\3\2\2\2\u0192\u018e\3\2\2\2\u0192\u018f\3\2"+
+		"\2\2\u0192\u0190\3\2\2\2\u0192\u0191\3\2\2\2\u0193_\3\2\2\2\u0194\u0195"+
+		"\t\5\2\2\u0195a\3\2\2\2\u0196\u0197\7A\2\2\u0197\u0198\7\t\2\2\u0198\u019d"+
+		"\7O\2\2\u0199\u019a\7\n\2\2\u019a\u019c\7O\2\2\u019b\u0199\3\2\2\2\u019c"+
+		"\u019f\3\2\2\2\u019d\u019b\3\2\2\2\u019d\u019e\3\2\2\2\u019e\u01a0\3\2"+
+		"\2\2\u019f\u019d\3\2\2\2\u01a0\u01a1\7\13\2\2\u01a1c\3\2\2\2\u01a2\u01a6"+
+		"\5D#\2\u01a3\u01a6\5B\"\2\u01a4\u01a6\5p9\2\u01a5\u01a2\3\2\2\2\u01a5"+
+		"\u01a3\3\2\2\2\u01a5\u01a4\3\2\2\2\u01a6e\3\2\2\2\u01a7\u01a8\7O\2\2\u01a8"+
+		"g\3\2\2\2\u01a9\u01aa\7\f\2\2\u01aa\u01ab\5p9\2\u01ab\u01ac\7\6\2\2\u01ac"+
+		"\u01ad\5p9\2\u01ad\u01ae\7\r\2\2\u01aei\3\2\2\2\u01af\u01b4\7O\2\2\u01b0"+
+		"\u01b1\7\n\2\2\u01b1\u01b3\7O\2\2\u01b2\u01b0\3\2\2\2\u01b3\u01b6\3\2"+
+		"\2\2\u01b4\u01b2\3\2\2\2\u01b4\u01b5\3\2\2\2\u01b5k\3\2\2\2\u01b6\u01b4"+
+		"\3\2\2\2\u01b7\u01b8\5j\66\2\u01b8m\3\2\2\2\u01b9\u01ba\5j\66\2\u01ba"+
+		"o\3\2\2\2\u01bb\u01bc\b9\1\2\u01bc\u01c2\5r:\2\u01bd\u01be\t\6\2\2\u01be"+
+		"\u01c2\5p9\20\u01bf\u01c0\t\7\2\2\u01c0\u01c2\5p9\17\u01c1\u01bb\3\2\2"+
+		"\2\u01c1\u01bd\3\2\2\2\u01c1\u01bf\3\2\2\2\u01c2\u01f4\3\2\2\2\u01c3\u01c4"+
+		"\f\16\2\2\u01c4\u01c5\t\b\2\2\u01c5\u01f3\5p9\17\u01c6\u01c7\f\r\2\2\u01c7"+
+		"\u01c8\t\6\2\2\u01c8\u01f3\5p9\16\u01c9\u01d1\f\f\2\2\u01ca\u01cb\7\4"+
+		"\2\2\u01cb\u01d2\7\4\2\2\u01cc\u01cd\7\5\2\2\u01cd\u01ce\7\5\2\2\u01ce"+
+		"\u01d2\7\5\2\2\u01cf\u01d0\7\5\2\2\u01d0\u01d2\7\5\2\2\u01d1\u01ca\3\2"+
+		"\2\2\u01d1\u01cc\3\2\2\2\u01d1\u01cf\3\2\2\2\u01d2\u01d3\3\2\2\2\u01d3"+
+		"\u01f3\5p9\r\u01d4\u01d5\f\13\2\2\u01d5\u01d6\t\t\2\2\u01d6\u01f3\5p9"+
+		"\f\u01d7\u01d8\f\n\2\2\u01d8\u01d9\t\n\2\2\u01d9\u01f3\5p9\13\u01da\u01db"+
+		"\f\t\2\2\u01db\u01dc\7\34\2\2\u01dc\u01f3\5p9\n\u01dd\u01de\f\b\2\2\u01de"+
+		"\u01df\7\35\2\2\u01df\u01f3\5p9\t\u01e0\u01e1\f\7\2\2\u01e1\u01e2\7\36"+
+		"\2\2\u01e2\u01f3\5p9\b\u01e3\u01e4\f\6\2\2\u01e4\u01e5\7\37\2\2\u01e5"+
+		"\u01f3\5p9\7\u01e6\u01e7\f\5\2\2\u01e7\u01e8\7 \2\2\u01e8\u01f3\5p9\6"+
+		"\u01e9\u01ea\f\4\2\2\u01ea\u01eb\7!\2\2\u01eb\u01ec\5p9\2\u01ec\u01ed"+
+		"\7\6\2\2\u01ed\u01ee\5p9\5\u01ee\u01f3\3\2\2\2\u01ef\u01f0\f\3\2\2\u01f0"+
+		"\u01f1\t\13\2\2\u01f1\u01f3\5p9\3\u01f2\u01c3\3\2\2\2\u01f2\u01c6\3\2"+
+		"\2\2\u01f2\u01c9\3\2\2\2\u01f2\u01d4\3\2\2\2\u01f2\u01d7\3\2\2\2\u01f2"+
+		"\u01da\3\2\2\2\u01f2\u01dd\3\2\2\2\u01f2\u01e0\3\2\2\2\u01f2\u01e3\3\2"+
+		"\2\2\u01f2\u01e6\3\2\2\2\u01f2\u01e9\3\2\2\2\u01f2\u01ef\3\2\2\2\u01f3"+
+		"\u01f6\3\2\2\2\u01f4\u01f2\3\2\2\2\u01f4\u01f5\3\2\2\2\u01f5q\3\2\2\2"+
+		"\u01f6\u01f4\3\2\2\2\u01f7\u01f8\7-\2\2\u01f8\u01f9\5p9\2\u01f9\u01fa"+
+		"\7.\2\2\u01fa\u0202\3\2\2\2\u01fb\u0202\7K\2\2\u01fc\u0202\7O\2\2\u01fd"+
+		"\u0202\5T+\2\u01fe\u0202\5t;\2\u01ff\u0202\5v<\2\u0200\u0202\5D#\2\u0201"+
+		"\u01f7\3\2\2\2\u0201\u01fb\3\2\2\2\u0201\u01fc\3\2\2\2\u0201\u01fd\3\2"+
+		"\2\2\u0201\u01fe\3\2\2\2\u0201\u01ff\3\2\2\2\u0201\u0200\3\2\2\2\u0202"+
+		"s\3\2\2\2\u0203\u0204\t\f\2\2\u0204u\3\2\2\2\u0205\u0206\5x=\2\u0206\u0207"+
+		"\7-\2\2\u0207\u020a\5z>\2\u0208\u0209\7\n\2\2\u0209\u020b\5z>\2\u020a"+
+		"\u0208\3\2\2\2\u020a\u020b\3\2\2\2\u020b\u020c\3\2\2\2\u020c\u020d\7."+
+		"\2\2\u020dw\3\2\2\2\u020e\u020f\t\r\2\2\u020fy\3\2\2\2\u0210\u0211\5T"+
+		"+\2\u0211\u0212\5h\65\2\u0212\u0215\3\2\2\2\u0213\u0215\5p9\2\u0214\u0210"+
+		"\3\2\2\2\u0214\u0213\3\2\2\2\u0215{\3\2\2\2\'\177\u0087\u008d\u0091\u0097"+
+		"\u00a2\u00ae\u00b2\u00ce\u00d4\u00dd\u00f4\u00fb\u0104\u010e\u0118\u011e"+
+		"\u0125\u012a\u012f\u0133\u014a\u0155\u016f\u0174\u017a\u0192\u019d\u01a5"+
+		"\u01b4\u01c1\u01d1\u01f2\u01f4\u0201\u020a\u0214";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

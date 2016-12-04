@@ -218,15 +218,15 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 */
 	void exitRequirementDeclaration(RIIF2Parser.RequirementDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
+	 * Enter a parse tree produced by {@link RIIF2Parser#primitiveFieldDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx);
+	void enterPrimitiveFieldDeclarator(RIIF2Parser.PrimitiveFieldDeclaratorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
+	 * Exit a parse tree produced by {@link RIIF2Parser#primitiveFieldDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx);
+	void exitPrimitiveFieldDeclarator(RIIF2Parser.PrimitiveFieldDeclaratorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#associativeDeclarator}.
 	 * @param ctx the parse tree
@@ -288,15 +288,25 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 */
 	void exitImposeDeclarator(RIIF2Parser.ImposeDeclaratorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RIIF2Parser#variableInitializer}.
+	 * Enter a parse tree produced by {@link RIIF2Parser#associativeInstanceAttributeDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableInitializer(RIIF2Parser.VariableInitializerContext ctx);
+	void enterAssociativeInstanceAttributeDeclarator(RIIF2Parser.AssociativeInstanceAttributeDeclaratorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RIIF2Parser#variableInitializer}.
+	 * Exit a parse tree produced by {@link RIIF2Parser#associativeInstanceAttributeDeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableInitializer(RIIF2Parser.VariableInitializerContext ctx);
+	void exitAssociativeInstanceAttributeDeclarator(RIIF2Parser.AssociativeInstanceAttributeDeclaratorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RIIF2Parser#primitiveFieldInitializer}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrimitiveFieldInitializer(RIIF2Parser.PrimitiveFieldInitializerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RIIF2Parser#primitiveFieldInitializer}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrimitiveFieldInitializer(RIIF2Parser.PrimitiveFieldInitializerContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#imposeInitializer}.
 	 * @param ctx the parse tree
@@ -358,15 +368,15 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 */
 	void exitChildComponentDeclaratorId(RIIF2Parser.ChildComponentDeclaratorIdContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RIIF2Parser#variableDeclaratorId}.
+	 * Enter a parse tree produced by {@link RIIF2Parser#primitiveFieldDeclaratorId}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclaratorId(RIIF2Parser.VariableDeclaratorIdContext ctx);
+	void enterPrimitiveFieldDeclaratorId(RIIF2Parser.PrimitiveFieldDeclaratorIdContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RIIF2Parser#variableDeclaratorId}.
+	 * Exit a parse tree produced by {@link RIIF2Parser#primitiveFieldDeclaratorId}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableDeclaratorId(RIIF2Parser.VariableDeclaratorIdContext ctx);
+	void exitPrimitiveFieldDeclaratorId(RIIF2Parser.PrimitiveFieldDeclaratorIdContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#associativeDeclaratorId}.
 	 * @param ctx the parse tree
@@ -387,6 +397,16 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssociativeInstanceDeclaratorId(RIIF2Parser.AssociativeInstanceDeclaratorIdContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RIIF2Parser#associativeInstanceAttributeDeclaratorId}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssociativeInstanceAttributeDeclaratorId(RIIF2Parser.AssociativeInstanceAttributeDeclaratorIdContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RIIF2Parser#associativeInstanceAttributeDeclaratorId}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssociativeInstanceAttributeDeclaratorId(RIIF2Parser.AssociativeInstanceAttributeDeclaratorIdContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#variableId}.
 	 * @param ctx the parse tree

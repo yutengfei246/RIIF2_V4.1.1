@@ -42,12 +42,13 @@ componentBodyElement
 
 fieldDeclaration
     : typeType fieldElement ';'
+    | associativeInstanceDeclarator ';'
+    | associativeInstanceAttributeDeclarator ';'
     ;
 
 fieldElement
-    : variableDeclarator
-    | associativeDeclarator
-    | associativeInstanceDeclarator
+    : primitiveFieldDeclarator
+    | associativeDeclarator // Identifier '[' ']'
     ;
 
 childComponentDeclaration
@@ -126,9 +127,9 @@ requirementDeclaration
 
 // §RIIF-2-v4 Declarators
 
-variableDeclarator
-    : variableDeclaratorId  // Identifier
-      ( ':' primitiveType ( ':=' variableInitializer )?
+primitiveFieldDeclarator
+    : primitiveFieldDeclaratorId  // Identifier
+      ( ':' primitiveType ( ':=' primitiveFieldInitializer )?
       | ':' TYPE_TABLE            //Tables are not allowed assigned in-line ?
       | ':=' listInitializer
       )
@@ -143,13 +144,13 @@ associativeInstanceDeclarator
     ;
 
 childComponentDeclarator
-    : childcomponentDeclaratorType childComponentDeclaratorId vector?
+    : childComponentDeclaratorType childComponentDeclaratorId vector?
     ;
 
 failModeDeclarator
-    : variableDeclaratorId
-    | associativeDeclaratorId
-    | associativeInstanceDeclaratorId
+    : primitiveFieldDeclaratorId // Identifier
+    | associativeDeclaratorId   //Identifier '[' ']'
+    | associativeInstanceDeclaratorId // Identifier '[' Identifier ']'
     ;
 
 assignmentDeclarator
@@ -160,9 +161,13 @@ imposeDeclarator
     : imposeDeclaratorId '=' imposeInitializer
     ;
 
+associativeInstanceAttributeDeclarator
+    : associativeInstanceAttributeDeclaratorId
+    ;
+
 // §RIIF-2-v4 Initializers
 
-variableInitializer
+primitiveFieldInitializer
     : expression
     ;
 
@@ -192,7 +197,7 @@ childComponentDeclaratorId
     : Identifier
     ;
 
-variableDeclaratorId
+primitiveFieldDeclaratorId
     : Identifier
     ;
 
@@ -204,8 +209,13 @@ associativeInstanceDeclaratorId
     : Identifier '[' Identifier ']'
     ;
 
+associativeInstanceAttributeDeclaratorId
+    : associativeInstanceDeclaratorId
+      '\'' Identifier
+    ;
+
 variableId
-    : variableDeclaratorId
+    : primitiveFieldDeclaratorId
     | associativeInstanceDeclaratorId
     ;
 
@@ -259,7 +269,7 @@ item
     | expression
     ;
 
-childcomponentDeclaratorType
+childComponentDeclaratorType
     : Identifier
     ;
 

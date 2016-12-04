@@ -4,7 +4,7 @@ package it.polito.yutengfei.RIIF2.module.Factory;
 import it.polito.yutengfei.RIIF2.module.Component;
 import it.polito.yutengfei.RIIF2.module.GenericModule;
 import it.polito.yutengfei.RIIF2.module.utility.Variable;
-import it.polito.yutengfei.RIIF2.parser.VaraibaleIdentifierAlreadyExistException;
+import it.polito.yutengfei.RIIF2.parser.VariableIdentifierAlreadyExistException;
 
 /**
  * Created by yutengfei on 02/12/16.
@@ -17,6 +17,7 @@ public class ComponentFactory implements Factory{
     public static final int TYPE_ASSOCIATIVE = 40;
     public static final int CHILD_COMPONENT = 50;
     public static final int TYPE_ENUM = 60;
+    public static final int FAIL_MODE = 70;
 
     @Override
     public GenericModule newInstance(String name) {
@@ -44,7 +45,7 @@ public class ComponentFactory implements Factory{
     public void prepareConstant() {
     }
 
-    public void prepareVariable(int constant) {
+    public void prepareVariable(int constant) throws PrepareVariableExistException{
 
     }
 
@@ -70,7 +71,7 @@ public class ComponentFactory implements Factory{
     }
 
     public void setAssociativeVariableInstance(String associativeIdentifier, String associativeInstanceIdentifier)
-        throws VaraibaleIdentifierAlreadyExistException{
+        throws VariableIdentifierAlreadyExistException {
 
     }
 
@@ -117,5 +118,16 @@ public class ComponentFactory implements Factory{
 
     public void finishSetEnumTokens() {
 
+    }
+
+    public void start() {
+    }
+
+    public void commit() {
+
+    }
+
+    public void setAssociativeVariableInstanceAttribute(String associativeIdentifier, String associativeInstanceIdentifier, String attributeIdentifier)
+    throws VariableIdentifierAlreadyExistException{
     }
 }

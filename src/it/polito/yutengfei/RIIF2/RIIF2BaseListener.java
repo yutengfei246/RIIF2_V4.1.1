@@ -268,13 +268,13 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) { }
+	@Override public void enterPrimitiveFieldDeclarator(RIIF2Parser.PrimitiveFieldDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx) { }
+	@Override public void exitPrimitiveFieldDeclarator(RIIF2Parser.PrimitiveFieldDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -352,13 +352,25 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableInitializer(RIIF2Parser.VariableInitializerContext ctx) { }
+	@Override public void enterAssociativeInstanceAttributeDeclarator(RIIF2Parser.AssociativeInstanceAttributeDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVariableInitializer(RIIF2Parser.VariableInitializerContext ctx) { }
+	@Override public void exitAssociativeInstanceAttributeDeclarator(RIIF2Parser.AssociativeInstanceAttributeDeclaratorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrimitiveFieldInitializer(RIIF2Parser.PrimitiveFieldInitializerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrimitiveFieldInitializer(RIIF2Parser.PrimitiveFieldInitializerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -436,13 +448,13 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableDeclaratorId(RIIF2Parser.VariableDeclaratorIdContext ctx) { }
+	@Override public void enterPrimitiveFieldDeclaratorId(RIIF2Parser.PrimitiveFieldDeclaratorIdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVariableDeclaratorId(RIIF2Parser.VariableDeclaratorIdContext ctx) { }
+	@Override public void exitPrimitiveFieldDeclaratorId(RIIF2Parser.PrimitiveFieldDeclaratorIdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -467,6 +479,18 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAssociativeInstanceDeclaratorId(RIIF2Parser.AssociativeInstanceDeclaratorIdContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssociativeInstanceAttributeDeclaratorId(RIIF2Parser.AssociativeInstanceAttributeDeclaratorIdContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssociativeInstanceAttributeDeclaratorId(RIIF2Parser.AssociativeInstanceAttributeDeclaratorIdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -137,11 +137,11 @@ public interface RIIF2Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRequirementDeclaration(RIIF2Parser.RequirementDeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link RIIF2Parser#variableDeclarator}.
+	 * Visit a parse tree produced by {@link RIIF2Parser#primitiveFieldDeclarator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVariableDeclarator(RIIF2Parser.VariableDeclaratorContext ctx);
+	T visitPrimitiveFieldDeclarator(RIIF2Parser.PrimitiveFieldDeclaratorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RIIF2Parser#associativeDeclarator}.
 	 * @param ctx the parse tree
@@ -179,11 +179,17 @@ public interface RIIF2Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitImposeDeclarator(RIIF2Parser.ImposeDeclaratorContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link RIIF2Parser#variableInitializer}.
+	 * Visit a parse tree produced by {@link RIIF2Parser#associativeInstanceAttributeDeclarator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVariableInitializer(RIIF2Parser.VariableInitializerContext ctx);
+	T visitAssociativeInstanceAttributeDeclarator(RIIF2Parser.AssociativeInstanceAttributeDeclaratorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RIIF2Parser#primitiveFieldInitializer}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimitiveFieldInitializer(RIIF2Parser.PrimitiveFieldInitializerContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RIIF2Parser#imposeInitializer}.
 	 * @param ctx the parse tree
@@ -221,11 +227,11 @@ public interface RIIF2Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitChildComponentDeclaratorId(RIIF2Parser.ChildComponentDeclaratorIdContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link RIIF2Parser#variableDeclaratorId}.
+	 * Visit a parse tree produced by {@link RIIF2Parser#primitiveFieldDeclaratorId}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVariableDeclaratorId(RIIF2Parser.VariableDeclaratorIdContext ctx);
+	T visitPrimitiveFieldDeclaratorId(RIIF2Parser.PrimitiveFieldDeclaratorIdContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RIIF2Parser#associativeDeclaratorId}.
 	 * @param ctx the parse tree
@@ -238,6 +244,12 @@ public interface RIIF2Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitAssociativeInstanceDeclaratorId(RIIF2Parser.AssociativeInstanceDeclaratorIdContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RIIF2Parser#associativeInstanceAttributeDeclaratorId}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssociativeInstanceAttributeDeclaratorId(RIIF2Parser.AssociativeInstanceAttributeDeclaratorIdContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RIIF2Parser#variableId}.
 	 * @param ctx the parse tree
