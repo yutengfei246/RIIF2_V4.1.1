@@ -150,7 +150,6 @@ childComponentDeclarator
 failModeDeclarator
     : primitiveFieldDeclaratorId // Identifier
     | associativeDeclaratorId   //Identifier '[' ']'
-    | associativeInstanceDeclaratorId // Identifier '[' Identifier ']'
     ;
 
 assignmentDeclarator

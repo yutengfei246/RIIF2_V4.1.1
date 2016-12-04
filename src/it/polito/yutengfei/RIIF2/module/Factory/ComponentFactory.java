@@ -4,6 +4,7 @@ package it.polito.yutengfei.RIIF2.module.Factory;
 import it.polito.yutengfei.RIIF2.module.Component;
 import it.polito.yutengfei.RIIF2.module.GenericModule;
 import it.polito.yutengfei.RIIF2.module.utility.Variable;
+import it.polito.yutengfei.RIIF2.module.utility.VectorType;
 import it.polito.yutengfei.RIIF2.parser.VariableIdentifierAlreadyExistException;
 
 /**
@@ -18,6 +19,8 @@ public class ComponentFactory implements Factory{
     public static final int CHILD_COMPONENT = 50;
     public static final int TYPE_ENUM = 60;
     public static final int FAIL_MODE = 70;
+    public static final int TYPE_ARRAY = 80;
+    public static final int ASSIGNMENT = 90;
 
     @Override
     public GenericModule newInstance(String name) {
@@ -36,7 +39,6 @@ public class ComponentFactory implements Factory{
     }
 
     public void setImpIdentifier(String impIdentifier) {
-        this.impIdentifier = impIdentifier;
     }
 
     public void prepareParameter() {
@@ -64,6 +66,7 @@ public class ComponentFactory implements Factory{
 
     public Variable getVariable(String associativeIdentifier) {
 
+        return null;
     }
 
     public boolean isAssociative(Variable variable) {
@@ -129,5 +132,21 @@ public class ComponentFactory implements Factory{
 
     public void setAssociativeVariableInstanceAttribute(String associativeIdentifier, String associativeInstanceIdentifier, String attributeIdentifier)
     throws VariableIdentifierAlreadyExistException{
+    }
+
+    public void startAssignment() {
+
+    }
+
+    public void commitAssignment() {
+
+    }
+
+    public void setVariableArray(VectorType vectorType) {
+
+    }
+
+    public void prepareAssignment() {
+
     }
 }
